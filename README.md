@@ -1,16 +1,62 @@
-# React + Vite
+# Omega Exports International
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> **"Quality Beyond Borders"**  
+> A modern, ultra-premium React + Tailwind CSS web application built for **Omega Exports International**, an international food export company specializing in prime beef, lamb & mutton, specialty meats, fresh vegetables, and premium fruits.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Key Features
 
-## React Compiler
+- **Brand System**: Customized Navy (`#072042`), Gold (`#9b7745`), and Warm Off-White (`#FAF8F5`) color palette with Playfair Display & Plus Jakarta Sans typography.
+- **Hero Section & Visual Slider**: High-resolution image slideshow with automated transition, prev/next controls, and tagline.
+- **Food Export Catalog**: Interactive category filters for Prime Beef, Lamb & Mutton, Specialty Meats, Fresh Vegetables, and Premium Fruits with a detailed Technical Specs Modal.
+- **Trade Solutions & Services**: Interactive operational pillars showcase, end-to-end export pipeline, wholesale sourcing, and cold-chain freight management.
+- **Quotation Workflow**: Modern quotation modal containing Name, Email, Company, Product, Quantity, Destination, and Message fields.
+- **Fully Responsive**: Mobile-first responsive design with sticky glass header and slide-out navigation menu.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🛠️ Technology Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- **Frontend Framework**: React 18+ (Vite)
+- **Styling**: Tailwind CSS v4
+- **Icons**: Lucide React (`lucide-react`)
+- **Animations**: Framer Motion (`framer-motion`)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Yasiyaa/Omega-Exports-International.git
+   cd Omega-Exports-International
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 📝 License
+
+This project is proprietary software created for Omega Exports International.
