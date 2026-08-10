@@ -56,7 +56,7 @@ export default function Hero({ onOpenQuote }) {
   };
 
   return (
-    <section id="home" className="relative min-h-[90vh] pt-24 sm:pt-32 pb-24 sm:pb-20 flex items-center bg-navy-950 text-white overflow-hidden">
+    <section id="home" className="relative min-h-[100dvh] pt-20 sm:pt-32 pb-20 sm:pb-24 flex items-center bg-navy-950 text-white overflow-hidden">
       {/* Background Image Slider */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
@@ -77,12 +77,12 @@ export default function Hero({ onOpenQuote }) {
         </AnimatePresence>
 
         {/* Minimal, ultra-light gradient overlays for maximum image visibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/85 via-navy-950/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-navy-950/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/95 via-transparent to-navy-950/50" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="max-w-3xl space-y-4 sm:space-y-6 text-left">
+        <div className="max-w-3xl space-y-3.5 sm:space-y-6 text-left">
           
           {/* Company Brand Tagline Pill */}
           <motion.div
@@ -92,7 +92,7 @@ export default function Hero({ onOpenQuote }) {
             className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-navy-950/80 border border-gold-400/50 text-gold-300 text-[10px] sm:text-sm font-semibold backdrop-blur-md shadow-lg"
           >
             <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gold-400 animate-ping"></span>
-            <span className="tracking-wide uppercase text-[10px] sm:text-[11px]">
+            <span className="tracking-wide uppercase text-[9px] sm:text-[11px] truncate">
               {HERO_SLIDES[currentSlide].badge}
             </span>
           </motion.div>
@@ -104,10 +104,10 @@ export default function Hero({ onOpenQuote }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.15] sm:leading-[1.1] drop-shadow-lg">
+            <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.15] sm:leading-[1.1] drop-shadow-lg">
               Omega Exports International
             </h1>
-            <p className="text-xl sm:text-3xl lg:text-4xl text-gold-gradient italic font-normal mt-1.5 sm:mt-2 drop-shadow-md">
+            <p className="text-lg xs:text-xl sm:text-3xl lg:text-4xl text-gold-gradient italic font-normal mt-1 sm:mt-2 drop-shadow-md">
               “Quality Beyond Borders”
             </p>
           </motion.div>
@@ -118,7 +118,7 @@ export default function Hero({ onOpenQuote }) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-slate-100 text-sm sm:text-lg lg:text-xl font-light leading-relaxed max-w-2xl drop-shadow-lg"
+            className="text-slate-100 text-xs sm:text-lg lg:text-xl font-light leading-relaxed max-w-2xl drop-shadow-lg"
           >
             {HERO_SLIDES[currentSlide].subtitle}
           </motion.p>
@@ -128,11 +128,11 @@ export default function Hero({ onOpenQuote }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 sm:pt-4"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 pt-1 sm:pt-4"
           >
             <button
               onClick={() => onOpenQuote()}
-              className="px-6 py-3.5 sm:px-8 sm:py-4 bg-gold-gradient text-white text-sm sm:text-base font-semibold rounded-xl shadow-2xl shadow-gold-500/30 hover:shadow-gold-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 sm:gap-3 group"
+              className="px-5 py-3 sm:px-8 sm:py-4 bg-gold-gradient text-white text-xs sm:text-base font-semibold rounded-xl shadow-2xl shadow-gold-500/30 hover:shadow-gold-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 sm:gap-3 group min-h-[44px]"
             >
               <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-gold-100" />
               <span>Get a Quotation</span>
@@ -141,7 +141,7 @@ export default function Hero({ onOpenQuote }) {
 
             <a
               href="#products"
-              className="px-6 py-3.5 sm:px-8 sm:py-4 bg-navy-950/80 hover:bg-navy-900 text-white border border-gold-400/40 hover:border-gold-400/70 text-sm sm:text-base font-semibold rounded-xl backdrop-blur-md transition-all text-center"
+              className="px-5 py-3 sm:px-8 sm:py-4 bg-navy-950/80 hover:bg-navy-900 text-white border border-gold-400/40 hover:border-gold-400/70 text-xs sm:text-base font-semibold rounded-xl backdrop-blur-md transition-all text-center flex items-center justify-center min-h-[44px]"
             >
               Explore Product Lineup
             </a>
@@ -152,34 +152,34 @@ export default function Hero({ onOpenQuote }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="pt-6 sm:pt-8 border-t border-slate-600/50 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4"
+            className="pt-4 sm:pt-8 border-t border-slate-600/50 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4"
           >
-            <div className="flex items-center gap-3 bg-navy-950/75 p-2.5 sm:p-3 rounded-xl border border-slate-700/60 backdrop-blur-md">
-              <div className="p-2 rounded-lg bg-navy-900 border border-gold-500/30 text-gold-400 shrink-0">
+            <div className="flex items-center gap-2.5 bg-navy-950/75 p-2 sm:p-3 rounded-xl border border-slate-700/60 backdrop-blur-md">
+              <div className="p-1.5 sm:p-2 rounded-lg bg-navy-900 border border-gold-500/30 text-gold-400 shrink-0">
                 <ThermometerSnowflake className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <h4 className="text-[9px] sm:text-[10px] uppercase tracking-wider text-slate-300 font-medium">Logistics</h4>
+                <h4 className="text-[9px] uppercase tracking-wider text-slate-300 font-medium">Logistics</h4>
                 <p className="text-xs sm:text-sm font-semibold text-white">Cold-Chain Guaranteed</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 bg-navy-950/75 p-2.5 sm:p-3 rounded-xl border border-slate-700/60 backdrop-blur-md">
-              <div className="p-2 rounded-lg bg-navy-900 border border-gold-500/30 text-gold-400 shrink-0">
+            <div className="flex items-center gap-2.5 bg-navy-950/75 p-2 sm:p-3 rounded-xl border border-slate-700/60 backdrop-blur-md">
+              <div className="p-1.5 sm:p-2 rounded-lg bg-navy-900 border border-gold-500/30 text-gold-400 shrink-0">
                 <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <h4 className="text-[9px] sm:text-[10px] uppercase tracking-wider text-slate-300 font-medium">Standard</h4>
+                <h4 className="text-[9px] uppercase tracking-wider text-slate-300 font-medium">Standard</h4>
                 <p className="text-xs sm:text-sm font-semibold text-white">Full Quality Inspection</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 bg-navy-950/75 p-2.5 sm:p-3 rounded-xl border border-slate-700/60 backdrop-blur-md">
-              <div className="p-2 rounded-lg bg-navy-900 border border-gold-500/30 text-gold-400 shrink-0">
+            <div className="flex items-center gap-2.5 bg-navy-950/75 p-2 sm:p-3 rounded-xl border border-slate-700/60 backdrop-blur-md">
+              <div className="p-1.5 sm:p-2 rounded-lg bg-navy-900 border border-gold-500/30 text-gold-400 shrink-0">
                 <Globe2 className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <h4 className="text-[9px] sm:text-[10px] uppercase tracking-wider text-slate-300 font-medium">Distribution</h4>
+                <h4 className="text-[9px] uppercase tracking-wider text-slate-300 font-medium">Distribution</h4>
                 <p className="text-xs sm:text-sm font-semibold text-white">Multimodal Freight</p>
               </div>
             </div>
@@ -189,11 +189,11 @@ export default function Hero({ onOpenQuote }) {
       </div>
 
       {/* Background Slider Controls & Indicators Responsive Box */}
-      <div className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-10 sm:bottom-10 z-20 flex items-center justify-between sm:justify-start gap-3 bg-navy-950/90 p-2 sm:p-2.5 rounded-2xl border border-gold-500/40 backdrop-blur-md shadow-2xl">
+      <div className="absolute bottom-3 left-3 right-3 sm:left-auto sm:right-8 sm:bottom-8 z-20 flex items-center justify-between sm:justify-start gap-2 sm:gap-3 bg-navy-950/90 p-1.5 sm:p-2.5 rounded-2xl border border-gold-500/40 backdrop-blur-md shadow-2xl">
         {/* Play/Pause Toggle */}
         <button
           onClick={() => setIsPlaying(!isPlaying)}
-          className="p-1.5 sm:p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
+          className="p-1.5 sm:p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors min-w-[36px] min-h-[36px] flex items-center justify-center"
           title={isPlaying ? 'Pause Slideshow' : 'Play Slideshow'}
         >
           {isPlaying ? <Pause className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : <Play className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
@@ -202,7 +202,7 @@ export default function Hero({ onOpenQuote }) {
         {/* Prev Arrow */}
         <button
           onClick={handlePrev}
-          className="p-1.5 sm:p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
+          className="p-1.5 sm:p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors min-w-[36px] min-h-[36px] flex items-center justify-center"
           title="Previous Slide"
         >
           <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -216,7 +216,7 @@ export default function Hero({ onOpenQuote }) {
               onClick={() => setCurrentSlide(idx)}
               className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 ${
                 currentSlide === idx
-                  ? 'w-6 sm:w-8 bg-gold-400 shadow-gold-glow'
+                  ? 'w-5 sm:w-8 bg-gold-400 shadow-gold-glow'
                   : 'w-2 sm:w-2.5 bg-slate-600 hover:bg-slate-400'
               }`}
               aria-label={`Go to slide ${idx + 1}`}
@@ -227,7 +227,7 @@ export default function Hero({ onOpenQuote }) {
         {/* Next Arrow */}
         <button
           onClick={handleNext}
-          className="p-1.5 sm:p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
+          className="p-1.5 sm:p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors min-w-[36px] min-h-[36px] flex items-center justify-center"
           title="Next Slide"
         >
           <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -237,3 +237,4 @@ export default function Hero({ onOpenQuote }) {
     </section>
   );
 }
+

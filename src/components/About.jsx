@@ -93,21 +93,21 @@ export default function About({ onOpenQuote }) {
         </div>
 
         {/* Sourcing Showcase Hub */}
-        <div className="bg-navy-950 rounded-2xl sm:rounded-3xl p-5 sm:p-10 text-white shadow-2xl border border-gold-500/30 mb-12 sm:mb-20">
+        <div className="bg-navy-950 rounded-2xl sm:rounded-3xl p-4 sm:p-10 text-white shadow-2xl border border-gold-500/30 mb-12 sm:mb-20">
           
           {/* Sourcing Hub Navigation Tabs - Horizontally scrollable on mobile */}
-          <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-4 border-b border-slate-800 gap-2 sm:gap-3 mb-6 sm:mb-10 -mx-2 px-2 sm:mx-0">
+          <div className="flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar pb-3 border-b border-slate-800 gap-2 sm:gap-3 mb-6 sm:mb-10 -mx-2 px-2 sm:mx-0">
             {ABOUT_PILLARS.map((pillar, idx) => (
               <button
                 key={pillar.id}
                 onClick={() => setActiveTab(idx)}
-                className={`px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 shrink-0 whitespace-nowrap ${
+                className={`px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 shrink-0 whitespace-nowrap min-h-[40px] ${
                   activeTab === idx
                     ? 'bg-gold-gradient text-white shadow-lg shadow-gold-500/25 ring-2 ring-gold-400'
                     : 'bg-navy-900 text-slate-300 hover:text-white hover:bg-navy-800 border border-slate-800'
                 }`}
               >
-                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-200" />
+                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-200 shrink-0" />
                 <span>{pillar.title}</span>
               </button>
             ))}
@@ -121,10 +121,10 @@ export default function About({ onOpenQuote }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-center"
             >
               {/* Left Side: Image Showcase */}
-              <div className="lg:col-span-6 relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-gold-500/30 h-56 sm:h-96 group">
+              <div className="lg:col-span-6 relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-gold-500/30 h-48 sm:h-96 group">
                 <img
                   src={ABOUT_PILLARS[activeTab].image}
                   alt={ABOUT_PILLARS[activeTab].title}
@@ -137,19 +137,19 @@ export default function About({ onOpenQuote }) {
                 </div>
 
                 <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white">
-                  <h4 className="text-sm sm:text-lg font-serif font-bold text-white">
+                  <h4 className="text-xs sm:text-lg font-serif font-bold text-white">
                     {ABOUT_PILLARS[activeTab].tagline}
                   </h4>
                 </div>
               </div>
 
               {/* Right Side: Narrative & Key Highlights */}
-              <div className="lg:col-span-6 space-y-4 sm:space-y-5">
+              <div className="lg:col-span-6 space-y-3.5 sm:space-y-5">
                 <div>
                   <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-gold-400">
                     Operational Core 0{activeTab + 1}
                   </span>
-                  <h3 className="text-xl sm:text-3xl font-serif font-bold text-white mt-0.5 sm:mt-1">
+                  <h3 className="text-lg sm:text-3xl font-serif font-bold text-white mt-0.5 sm:mt-1">
                     {ABOUT_PILLARS[activeTab].title}
                   </h3>
                 </div>
@@ -158,7 +158,7 @@ export default function About({ onOpenQuote }) {
                   {ABOUT_PILLARS[activeTab].description}
                 </p>
 
-                <div className="space-y-2.5 pt-1">
+                <div className="space-y-2 pt-1">
                   {ABOUT_PILLARS[activeTab].bullets.map((bullet, i) => (
                     <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gold-500/20 border border-gold-500/40 text-gold-400 flex items-center justify-center shrink-0 mt-0.5">
@@ -172,7 +172,7 @@ export default function About({ onOpenQuote }) {
                 <div className="pt-2 sm:pt-4">
                   <button
                     onClick={() => onOpenQuote(ABOUT_PILLARS[activeTab].title)}
-                    className="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 bg-gold-gradient hover:opacity-95 text-white font-semibold text-xs sm:text-sm rounded-xl shadow-lg shadow-gold-500/20 transition-all flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-5 sm:px-6 py-3 bg-gold-gradient hover:opacity-95 text-white font-semibold text-xs sm:text-sm rounded-xl shadow-lg shadow-gold-500/20 transition-all flex items-center justify-center gap-2 min-h-[44px]"
                   >
                     <span>Request Quotation for {ABOUT_PILLARS[activeTab].title.split(' ')[0]}</span>
                     <ArrowRight className="w-4 h-4" />
@@ -200,9 +200,9 @@ export default function About({ onOpenQuote }) {
             {EXPORT_PIPELINE.map((pipe, idx) => (
               <div
                 key={idx}
-                className="bg-warm-100 p-5 sm:p-6 rounded-2xl border border-warm-300 relative group hover:bg-white hover:shadow-executive hover:border-gold-400/50 transition-all duration-300"
+                className="bg-warm-100 p-4 sm:p-6 rounded-2xl border border-warm-300 relative group hover:bg-white hover:shadow-executive hover:border-gold-400/50 transition-all duration-300"
               >
-                <div className="text-2xl sm:text-3xl font-serif font-extrabold text-gold-500/40 group-hover:text-gold-500 transition-colors mb-2 sm:mb-3">
+                <div className="text-xl sm:text-3xl font-serif font-extrabold text-gold-500/40 group-hover:text-gold-500 transition-colors mb-1.5 sm:mb-3">
                   {pipe.step}
                 </div>
                 <h4 className="text-sm sm:text-base font-serif font-bold text-navy-900 mb-1">
@@ -217,13 +217,13 @@ export default function About({ onOpenQuote }) {
         </div>
 
         {/* Executive Commitment Callout */}
-        <div className="bg-gradient-to-r from-navy-900 via-navy-950 to-navy-900 rounded-2xl sm:rounded-3xl p-6 sm:p-12 text-white border border-gold-500/30 shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
+        <div className="bg-gradient-to-r from-navy-900 via-navy-950 to-navy-900 rounded-2xl sm:rounded-3xl p-5 sm:p-12 text-white border border-gold-500/30 shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
           <div className="space-y-2 max-w-xl">
             <div className="flex items-center gap-2 text-gold-400">
               <Award className="w-4 h-4 sm:w-5 sm:h-5" />
               <span className="text-[10px] sm:text-xs uppercase tracking-widest font-semibold">Quality Commitment</span>
             </div>
-            <h3 className="text-xl sm:text-3xl font-serif font-bold text-white">
+            <h3 className="text-lg sm:text-3xl font-serif font-bold text-white leading-snug">
               Ready to Expand Your Food Import Operations?
             </h3>
             <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
@@ -233,7 +233,7 @@ export default function About({ onOpenQuote }) {
 
           <button
             onClick={() => onOpenQuote()}
-            className="w-full md:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gold-gradient text-white font-semibold text-xs sm:text-sm rounded-xl shadow-xl shadow-gold-500/30 hover:shadow-gold-500/50 hover:scale-[1.02] transition-all shrink-0 flex items-center justify-center gap-2"
+            className="w-full md:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gold-gradient text-white font-semibold text-xs sm:text-sm rounded-xl shadow-xl shadow-gold-500/30 hover:shadow-gold-500/50 hover:scale-[1.02] transition-all shrink-0 flex items-center justify-center gap-2 min-h-[44px]"
           >
             <span>Request Immediate B2B Quote</span>
             <ArrowRight className="w-4 h-4" />

@@ -66,6 +66,7 @@
 /* Smooth custom scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: #FAF8F5;
@@ -77,3 +78,20 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #9b7745;
 }
+
+/* Hide scrollbar for clean horizontal touch scrolling on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Touch callouts and safe area enhancements */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .safe-pt {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+

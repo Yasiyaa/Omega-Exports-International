@@ -142,10 +142,10 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
                 </p>
 
                 {/* Form Fields Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                   {/* Name */}
                   <div>
-                    <label className="block text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                    <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
                       Full Name <span className="text-rose-500">*</span>
                     </label>
                     <input
@@ -155,13 +155,13 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
                       placeholder="e.g. Alexander Wright"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-3.5 py-2 sm:px-4 sm:py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-xs sm:text-sm text-slate-800"
+                      className="w-full px-3.5 py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-base sm:text-sm text-slate-800"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label className="block text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                    <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
                       Business Email <span className="text-rose-500">*</span>
                     </label>
                     <input
@@ -171,13 +171,13 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
                       placeholder="e.g. wright@importcorp.com"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-3.5 py-2 sm:px-4 sm:py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-xs sm:text-sm text-slate-800"
+                      className="w-full px-3.5 py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-base sm:text-sm text-slate-800"
                     />
                   </div>
 
                   {/* Company */}
                   <div>
-                    <label className="block text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                    <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
                       Company Name <span className="text-rose-500">*</span>
                     </label>
                     <input
@@ -187,13 +187,13 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
                       placeholder="e.g. Global Foods Trading Ltd."
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-3.5 py-2 sm:px-4 sm:py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-xs sm:text-sm text-slate-800"
+                      className="w-full px-3.5 py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-base sm:text-sm text-slate-800"
                     />
                   </div>
 
                   {/* Product Category */}
                   <div>
-                    <label className="block text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                    <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
                       Product Category <span className="text-rose-500">*</span>
                     </label>
                     <select
@@ -201,7 +201,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
                       required
                       value={formData.product}
                       onChange={handleChange}
-                      className="w-full px-3.5 py-2 sm:px-4 sm:py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-xs sm:text-sm text-slate-800"
+                      className="w-full px-3.5 py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-base sm:text-sm text-slate-800"
                     >
                       <option value="Prime Beef">Beef (Chilled & Frozen Cuts)</option>
                       <option value="Lamb & Mutton">Lamb & Mutton (Racks, Loins, Carcass)</option>
@@ -214,7 +214,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
 
                   {/* Quantity */}
                   <div>
-                    <label className="block text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                    <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
                       Estimated Quantity <span className="text-rose-500">*</span>
                     </label>
                     <input
@@ -224,13 +224,13 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
                       placeholder="e.g. 1 x 40ft Reefer / 20 Metric Tons"
                       value={formData.quantity}
                       onChange={handleChange}
-                      className="w-full px-3.5 py-2 sm:px-4 sm:py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-xs sm:text-sm text-slate-800"
+                      className="w-full px-3.5 py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-base sm:text-sm text-slate-800"
                     />
                   </div>
 
                   {/* Destination */}
                   <div>
-                    <label className="block text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                    <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
                       Destination Country / Port <span className="text-rose-500">*</span>
                     </label>
                     <input
@@ -240,14 +240,14 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
                       placeholder="e.g. Port of Rotterdam / Singapore"
                       value={formData.destination}
                       onChange={handleChange}
-                      className="w-full px-3.5 py-2 sm:px-4 sm:py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-xs sm:text-sm text-slate-800"
+                      className="w-full px-3.5 py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-base sm:text-sm text-slate-800"
                     />
                   </div>
                 </div>
 
                 {/* Message */}
                 <div>
-                  <label className="block text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                  <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
                     Message / Specifications
                   </label>
                   <textarea
@@ -256,19 +256,19 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
                     placeholder="Specify cut requirements, packaging preferences, temperature constraints, or timeline..."
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-3.5 py-2 sm:px-4 sm:py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-xs sm:text-sm text-slate-800"
+                    className="w-full px-3.5 py-2.5 bg-warm-50 border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-base sm:text-sm text-slate-800"
                   ></textarea>
                 </div>
 
                 {/* Trust Badges & Submit */}
-                <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-warm-200 mt-3">
+                <div className="pt-3 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-warm-200 mt-3">
                   <div className="flex items-center gap-3 text-[11px] sm:text-xs text-slate-500">
                     <span className="flex items-center gap-1">
-                      <ShieldCheck className="w-3.5 h-3.5 text-gold-500" />
+                      <ShieldCheck className="w-3.5 h-3.5 text-gold-500 shrink-0" />
                       Direct Export Pricing
                     </span>
                     <span className="flex items-center gap-1">
-                      <Globe className="w-3.5 h-3.5 text-gold-500" />
+                      <Globe className="w-3.5 h-3.5 text-gold-500 shrink-0" />
                       Global Sea & Air Freight
                     </span>
                   </div>
@@ -276,7 +276,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-gold-gradient text-white hover:opacity-95 font-semibold rounded-xl shadow-lg shadow-gold-500/20 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm disabled:opacity-50"
+                    className="w-full sm:w-auto px-6 sm:px-8 py-3.5 bg-gold-gradient text-white hover:opacity-95 font-semibold rounded-xl shadow-lg shadow-gold-500/20 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm disabled:opacity-50 min-h-[44px]"
                   >
                     {isSubmitting ? (
                       <>

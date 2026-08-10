@@ -31,20 +31,22 @@ export default function Products({ onOpenQuote }) {
         </div>
 
         {/* Category Filter Tabs - Horizontally Scrollable on Mobile */}
-        <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-4 sm:pb-0 gap-2 sm:gap-3 mb-8 sm:mb-12 max-w-full -mx-4 px-4 sm:mx-0">
-          {PRODUCT_CATEGORIES.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap shrink-0 ${
-                activeCategory === cat.id
-                  ? 'bg-navy-900 text-white shadow-md shadow-navy-900/20 ring-2 ring-gold-500/50'
-                  : 'bg-white text-slate-700 hover:bg-warm-200 border border-warm-300'
-              }`}
-            >
-              {cat.name}
-            </button>
-          ))}
+        <div className="relative mb-8 sm:mb-12 max-w-full">
+          <div className="flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar pb-2 sm:pb-0 gap-2 sm:gap-3 -mx-4 px-4 sm:mx-0">
+            {PRODUCT_CATEGORIES.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`px-4 sm:px-5 py-2.5 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap shrink-0 min-h-[40px] ${
+                  activeCategory === cat.id
+                    ? 'bg-navy-900 text-white shadow-md shadow-navy-900/20 ring-2 ring-gold-500/50'
+                    : 'bg-white text-slate-700 hover:bg-warm-200 border border-warm-300'
+                }`}
+              >
+                {cat.name}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Product Cards Grid */}
@@ -59,7 +61,7 @@ export default function Products({ onOpenQuote }) {
               className="group bg-white rounded-2xl overflow-hidden shadow-executive hover:shadow-executive-hover border border-warm-300 transition-all duration-300 flex flex-col justify-between"
             >
               {/* Product Image Box */}
-              <div className="relative h-56 sm:h-64 overflow-hidden bg-slate-900">
+              <div className="relative h-52 sm:h-64 overflow-hidden bg-slate-900">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -76,7 +78,7 @@ export default function Products({ onOpenQuote }) {
 
                 {/* Subtitle Overlay */}
                 <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4">
-                  <h3 className="text-lg sm:text-xl font-serif font-bold text-white group-hover:text-gold-300 transition-colors">
+                  <h3 className="text-base sm:text-xl font-serif font-bold text-white group-hover:text-gold-300 transition-colors leading-tight">
                     {product.name}
                   </h3>
                   <p className="text-xs text-slate-300 font-medium truncate mt-0.5">
@@ -95,17 +97,17 @@ export default function Products({ onOpenQuote }) {
                 <div className="bg-warm-50 p-2.5 sm:p-3 rounded-xl border border-warm-200 space-y-1.5 text-xs">
                   <div className="flex items-center justify-between text-slate-700">
                     <span className="flex items-center gap-1.5 font-medium">
-                      <Thermometer className="w-3.5 h-3.5 text-gold-500" />
-                      Storage Temp:
+                      <Thermometer className="w-3.5 h-3.5 text-gold-500 shrink-0" />
+                      <span className="truncate">Storage:</span>
                     </span>
                     <span className="font-semibold text-navy-900 truncate ml-1">{product.specs[0].value.split('/')[0]}</span>
                   </div>
                   <div className="flex items-center justify-between text-slate-700">
                     <span className="flex items-center gap-1.5 font-medium">
-                      <ShieldCheck className="w-3.5 h-3.5 text-gold-500" />
-                      Export Standard:
+                      <ShieldCheck className="w-3.5 h-3.5 text-gold-500 shrink-0" />
+                      <span className="truncate">Standard:</span>
                     </span>
-                    <span className="font-semibold text-navy-900">Cold-Chain Grade</span>
+                    <span className="font-semibold text-navy-900 truncate ml-1">Cold-Chain Grade</span>
                   </div>
                 </div>
 
@@ -113,17 +115,17 @@ export default function Products({ onOpenQuote }) {
                 <div className="pt-1 sm:pt-2 flex items-center gap-2 sm:gap-3">
                   <button
                     onClick={() => setSelectedProduct(product)}
-                    className="flex-1 py-2 sm:py-2.5 px-2.5 sm:px-3 bg-warm-100 hover:bg-warm-200 text-navy-900 text-xs font-semibold rounded-xl border border-warm-300 transition-colors flex items-center justify-center gap-1"
+                    className="flex-1 py-2.5 px-2.5 sm:px-3 bg-warm-100 hover:bg-warm-200 text-navy-900 text-xs font-semibold rounded-xl border border-warm-300 transition-colors flex items-center justify-center gap-1 min-h-[40px]"
                   >
-                    <Eye className="w-3.5 h-3.5 text-gold-600" />
+                    <Eye className="w-3.5 h-3.5 text-gold-600 shrink-0" />
                     <span>View Specs</span>
                   </button>
 
                   <button
                     onClick={() => onOpenQuote(product.name)}
-                    className="flex-1 py-2 sm:py-2.5 px-2.5 sm:px-3 bg-gold-gradient hover:opacity-95 text-white text-xs font-semibold rounded-xl shadow-md shadow-gold-500/20 transition-all flex items-center justify-center gap-1"
+                    className="flex-1 py-2.5 px-2.5 sm:px-3 bg-gold-gradient hover:opacity-95 text-white text-xs font-semibold rounded-xl shadow-md shadow-gold-500/20 transition-all flex items-center justify-center gap-1 min-h-[40px]"
                   >
-                    <FileText className="w-3.5 h-3.5 text-gold-100" />
+                    <FileText className="w-3.5 h-3.5 text-gold-100 shrink-0" />
                     <span>Get Quote</span>
                   </button>
                 </div>
