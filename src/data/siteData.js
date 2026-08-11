@@ -98,13 +98,13 @@ export const LEADERSHIP_PROFILES = [
   {
     name: "Ashan Dias",
     role: "Director",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
+    image: "/assets/Ashan%20Dias.jpeg",
     bio: "Ashan Dias brings more than 15 years of professional experience in banking and international financial trade to Omega Exports International Pty Ltd. His background provides valuable expertise across financial services, international transactions, trade related financial activities, risk management and international business.\n\nAs a Director, Ashan is focused on developing Omega’s international trading network, identifying new market opportunities and building strong commercial partnerships between Australian suppliers and customers around the world."
   },
   {
     name: "Thilini Jayamaha",
     role: "Director",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+    image: "/assets/Thilini%20Jayamaha.jpeg",
     bio: "Thilini Jayamaha is a Director of Omega Exports International bringing a strong academic background in business management and professional experience within the Australian banking sector. She holds a Bachelor of Business Administration degree from the University of Colombo, providing her with a solid foundation in business management, finance, strategic decision making and commercial operations.\n\nCurrently based in Melbourne, Australia, Thilini works with a leading Australian bank. Prior to establishing her career in Australia, Thilini worked as a Flight Attendant, gaining valuable international exposure in the customer service industry.\n\nAs a Director of Omega Exports International, she contributes to the company's business development and international growth. Her combination of business education, banking experience and international perspective supports the company’s vision of building trusted relationships and delivering quality Australian products to markets worldwide."
   }
 ];
