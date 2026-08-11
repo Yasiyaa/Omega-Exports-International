@@ -8,7 +8,11 @@ export const BRAND_INFO = {
   positioning: "From Australia to the World.",
   heroVision: "From Australia, with a vision for the world.",
   heroText: "Omega Exports International Pty Ltd is an Australian based international export and trading company specialising in the sourcing and supply of quality Australian meat, fresh produce and selected food products for international markets.",
-  introHighlight: "Starting in Sri Lanka. Building towards China and the United Kingdom. Growing globally."
+  introHighlight: "Starting in Sri Lanka. Building towards China and the United Kingdom. Growing globally.",
+  phoneDisplay: "+61 405 350 097",
+  phoneRaw: "+61405350097",
+  phoneTel: "tel:+61405350097",
+  abn: "41 701 214 002"
 };
 
 export const PRODUCTS_DATA = [

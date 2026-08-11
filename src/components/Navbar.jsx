@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe, FileText, ChevronRight } from 'lucide-react';
+import { Menu, X, Globe, FileText, ChevronRight, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BRAND_INFO } from '../data/siteData';
 
 export default function Navbar({ onOpenQuote }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,7 +19,6 @@ export default function Navbar({ onOpenQuote }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scrolling when mobile drawer is active
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -84,8 +84,17 @@ export default function Navbar({ onOpenQuote }) {
               ))}
             </nav>
 
-            {/* Quotation CTA Button & Mobile Toggle */}
-            <div className="flex items-center gap-1.5 sm:gap-4 shrink-0">
+            {/* Direct Call Button, Quotation CTA & Mobile Toggle */}
+            <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+              <a
+                href={BRAND_INFO.phoneTel}
+                className="p-2 sm:px-3.5 sm:py-2 rounded-xl text-gold-300 hover:text-white bg-navy-900/90 border border-gold-500/30 hover:border-gold-400 transition-all flex items-center justify-center gap-1.5 shrink-0 min-w-[36px] min-h-[36px] sm:min-h-[44px]"
+                title={`Call ${BRAND_INFO.phoneDisplay}`}
+              >
+                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400 shrink-0" />
+                <span className="hidden sm:inline text-xs sm:text-sm font-semibold text-gold-300">Call Us</span>
+              </a>
+
               <button
                 onClick={() => onOpenQuote()}
                 className="px-2.5 py-1.5 sm:px-5 sm:py-2.5 bg-gold-gradient text-white text-[11px] sm:text-sm font-semibold rounded-xl shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-1 sm:gap-2 shrink-0 min-h-[36px] sm:min-h-[44px]"

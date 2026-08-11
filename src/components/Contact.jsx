@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, ShieldCheck, Mail, Building, Globe } from 'lucide-react';
+import { Send, CheckCircle2, ShieldCheck, Mail, Building, Globe, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { BRAND_INFO } from '../data/siteData';
 
 export default function Contact({ onOpenQuote }) {
   const [submitted, setSubmitted] = useState(false);
@@ -59,6 +60,19 @@ export default function Contact({ onOpenQuote }) {
 
               <div className="space-y-4 pt-4 border-t border-slate-800 text-xs sm:text-sm">
                 <div className="flex items-start gap-3">
+                  <Phone className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
+                  <div>
+                    <span className="text-xs text-slate-400 block font-medium">Australian Direct Line</span>
+                    <a
+                      href={BRAND_INFO.phoneTel}
+                      className="font-medium text-white hover:text-gold-300 transition-colors text-sm sm:text-base font-semibold block"
+                    >
+                      {BRAND_INFO.phoneDisplay}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
                   <Globe className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
                   <div>
                     <span className="text-xs text-slate-400 block font-medium">Headquarters</span>
@@ -73,22 +87,22 @@ export default function Contact({ onOpenQuote }) {
                     <span className="font-medium text-white">Australian Proprietary Company (Pty Ltd)</span>
                   </div>
                 </div>
-
-                <div className="flex items-start gap-3">
-                  <ShieldCheck className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs text-slate-400 block font-medium">Operational Focus</span>
-                    <span className="font-medium text-white">Australia to Global Export Channels</span>
-                  </div>
-                </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-800">
+              <div className="pt-4 border-t border-slate-800 space-y-3">
+                <a
+                  href={BRAND_INFO.phoneTel}
+                  className="w-full py-3.5 bg-gold-gradient text-white text-xs uppercase tracking-wider font-semibold rounded-xl shadow-lg hover:opacity-95 transition-all text-center flex items-center justify-center gap-2 min-h-[44px]"
+                >
+                  <Phone className="w-4 h-4 text-gold-100" />
+                  <span>Call Us Now</span>
+                </a>
+
                 <button
                   onClick={() => onOpenQuote()}
-                  className="w-full py-3.5 bg-gold-gradient text-white text-xs uppercase tracking-wider font-semibold rounded-xl shadow-lg hover:opacity-95 transition-all text-center block min-h-[44px]"
+                  className="w-full py-3 bg-navy-900 hover:bg-navy-800 text-gold-300 border border-gold-500/30 text-xs uppercase tracking-wider font-semibold rounded-xl transition-colors text-center block min-h-[40px]"
                 >
-                  Open Quotation Modal Form
+                  Open Quotation Request Form
                 </button>
               </div>
             </div>
