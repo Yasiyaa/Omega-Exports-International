@@ -118,7 +118,7 @@ export default function Hero({ onOpenQuote }) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-slate-100 text-xs sm:text-lg lg:text-xl font-light leading-relaxed max-w-2xl drop-shadow-lg"
+            className="text-slate-100 text-sm sm:text-lg lg:text-xl font-light leading-relaxed max-w-2xl drop-shadow-lg"
           >
             {HERO_SLIDES[currentSlide].subtitle}
           </motion.p>

@@ -62,14 +62,14 @@ export default function Solutions({ onOpenQuote }) {
                   </p>
                 </div>
 
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
                   {sol.description}
                 </p>
 
                 {/* Benefits List */}
                 <div className="space-y-2.5 pt-3 sm:pt-4 border-t border-slate-800">
                   {sol.benefits.map((benefit, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-200">
+                    <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                       <CheckCircle2 className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
                       <span>{benefit}</span>
                     </div>

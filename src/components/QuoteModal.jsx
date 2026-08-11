@@ -137,7 +137,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
-                <p className="text-slate-600 text-xs sm:text-sm">
+                <p className="text-slate-600 text-sm sm:text-base">
                   Complete the export inquiry details below to receive competitive bulk pricing, freight schedules, and technical packaging specifications.
                 </p>
 

@@ -81,7 +81,7 @@ export default function Products({ onOpenQuote }) {
                   <h3 className="text-base sm:text-xl font-serif font-bold text-white group-hover:text-gold-300 transition-colors leading-tight">
                     {product.name}
                   </h3>
-                  <p className="text-xs text-slate-300 font-medium truncate mt-0.5">
+                  <p className="text-xs sm:text-sm text-slate-300 font-medium truncate mt-0.5">
                     {product.subtitle}
                   </p>
                 </div>
@@ -89,7 +89,7 @@ export default function Products({ onOpenQuote }) {
 
               {/* Card Body */}
               <div className="p-4 sm:p-6 space-y-3 sm:space-y-4 flex-1 flex flex-col justify-between">
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed line-clamp-3">
                   {product.description}
                 </p>
 

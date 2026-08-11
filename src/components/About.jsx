@@ -154,7 +154,7 @@ export default function About({ onOpenQuote }) {
                   </h3>
                 </div>
 
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
                   {ABOUT_PILLARS[activeTab].description}
                 </p>
 
@@ -191,7 +191,7 @@ export default function About({ onOpenQuote }) {
             <h3 className="text-xl sm:text-3xl font-serif font-bold text-navy-900">
               End-to-End International Export Pipeline
             </h3>
-            <p className="text-slate-600 text-xs sm:text-sm font-light mt-1.5">
+            <p className="text-slate-600 text-sm sm:text-base font-light mt-1.5">
               From contract sourcing to destination port clearance, our protocol guarantees food safety.
             </p>
           </div>
@@ -208,7 +208,7 @@ export default function About({ onOpenQuote }) {
                 <h4 className="text-sm sm:text-base font-serif font-bold text-navy-900 mb-1">
                   {pipe.title}
                 </h4>
-                <p className="text-xs text-slate-600 font-light leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed">
                   {pipe.desc}
                 </p>
               </div>
@@ -226,7 +226,7 @@ export default function About({ onOpenQuote }) {
             <h3 className="text-lg sm:text-3xl font-serif font-bold text-white leading-snug">
               Ready to Expand Your Food Import Operations?
             </h3>
-            <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
+            <p className="text-slate-300 text-sm sm:text-base font-light leading-relaxed">
               Connect with our international export trade desk for direct farm pricing, container shipping schedules, and packaging customization.
             </p>
           </div>

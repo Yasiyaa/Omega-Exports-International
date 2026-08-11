@@ -72,7 +72,7 @@ export default function ProductDetailModal({ product, onClose, onRequestQuote })
 
               <div className="space-y-2.5 sm:space-y-3">
                 <h4 className="text-lg sm:text-xl font-serif font-bold text-navy-900">{product.name}</h4>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                   {product.description}
                 </p>
 

@@ -48,7 +48,7 @@ export default function Contact({ onOpenQuote }) {
               <div>
                 <span className="text-[11px] sm:text-xs uppercase tracking-widest text-gold-400 font-bold">Trade Enquiries</span>
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-1">Omega Exports Trade Office</h3>
-                <p className="text-slate-300 text-xs mt-2 font-light">
+                <p className="text-slate-300 text-xs sm:text-sm mt-2 font-light">
                   Our trade desk provides responsive service for global importers across multiple timezones.
                 </p>
               </div>
@@ -94,7 +94,7 @@ export default function Contact({ onOpenQuote }) {
                 <ShieldCheck className="w-4 h-4 text-gold-500 shrink-0" />
                 <span>Fast Business Response</span>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
                 For detailed freight schedules and price quotations, please use the quotation form to specify your target destination port and container volume.
               </p>
             </div>

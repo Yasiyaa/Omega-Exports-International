@@ -5,12 +5,13 @@ import { motion } from 'framer-motion';
 
 export default function Services({ onOpenQuote }) {
   const getServiceIcon = (iconName) => {
+    const iconClasses = "w-6 h-6 text-gold-500 group-hover:text-white transition-colors duration-300";
     switch (iconName) {
-      case 'PackageCheck': return <PackageCheck className="w-6 h-6 text-gold-500" />;
-      case 'ThermometerSnowflake': return <ThermometerSnowflake className="w-6 h-6 text-gold-500" />;
-      case 'Tags': return <Tags className="w-6 h-6 text-gold-500" />;
-      case 'ShieldCheck': return <ShieldCheck className="w-6 h-6 text-gold-500" />;
-      default: return <Briefcase className="w-6 h-6 text-gold-500" />;
+      case 'PackageCheck': return <PackageCheck className={iconClasses} />;
+      case 'ThermometerSnowflake': return <ThermometerSnowflake className={iconClasses} />;
+      case 'Tags': return <Tags className={iconClasses} />;
+      case 'ShieldCheck': return <ShieldCheck className={iconClasses} />;
+      default: return <Briefcase className={iconClasses} />;
     }
   };
 
@@ -58,13 +59,13 @@ export default function Services({ onOpenQuote }) {
                   </div>
                 </div>
 
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-light">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
                   {srv.description}
                 </p>
 
                 <ul className="space-y-2 pt-1 sm:pt-2">
                   {srv.highlights.map((h, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 font-medium">
+                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 font-medium">
                       <div className="w-4 h-4 rounded-full bg-gold-100 text-gold-600 flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="w-2.5 h-2.5" />
                       </div>
