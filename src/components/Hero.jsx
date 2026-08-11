@@ -1,37 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { ShieldCheck, ThermometerSnowflake, Globe2, ArrowRight, FileText, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BRAND_INFO } from '../data/siteData';
 
 const HERO_SLIDES = [
   {
-    image: '/assets/hero_logistics.jpg',
-    badge: 'Cold-Chain Shipping Logistics',
-    title: 'Global Food Freight Operations',
-    subtitle: 'Seamless ocean and air freight logistics delivering temperature-controlled consignments to international ports.'
+    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=85',
+    badge: 'Australian Quality. Global Ambition.',
+    title: 'Connecting Australian Products with International Markets',
+    subtitle: 'Omega Exports International Pty Ltd is an Australian based international export and trading company.'
   },
   {
-    image: '/assets/beef_export.jpg',
-    badge: 'Prime Beef Exports',
-    title: 'Pasture-Raised Vacuum Sealed Cuts',
-    subtitle: 'Chilled and deep-frozen prime beef cuts processed under strict sanitary and HACCP temperature standards.'
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=85',
+    badge: 'Premium Meat & Protein',
+    title: 'Quality Australian Meat Exports',
+    subtitle: 'Sourcing quality Australian meat and protein products for international customers.'
   },
   {
-    image: '/assets/lamb_mutton.jpg',
-    badge: 'Lamb & Mutton Sourcing',
-    title: 'Export Grade Tender Lamb & Mutton',
-    subtitle: 'Select lamb racks, loins, and carcasses packaged for global foodservice and retail distribution.'
-  },
-  {
-    image: '/assets/vegetables_export.jpg',
-    badge: 'Fresh Agriculture & Produce',
-    title: 'Hydro-Cooled Fresh Vegetables',
-    subtitle: 'Harvested at peak freshness and shipped in controlled atmosphere export packaging.'
-  },
-  {
-    image: '/assets/fruits_export.jpg',
-    badge: 'Premium Harvest Fruits',
-    title: 'Orchard-Fresh Citrus, Apples & Berries',
-    subtitle: 'Size and Brix-indexed export fruits sorted for international fresh produce markets.'
+    image: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=1920&q=85',
+    badge: 'Fresh Agricultural Produce',
+    title: 'Australian Fruits & Fresh Vegetables',
+    subtitle: 'Connecting international buyers with quality Australian fresh produce and food products.'
   }
 ];
 
@@ -99,40 +88,59 @@ export default function Hero({ onOpenQuote }) {
 
           {/* Main Headline */}
           <motion.div
-            key={`headline-${currentSlide}`}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            className="space-y-2"
           >
-            <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.15] sm:leading-[1.1] drop-shadow-lg">
-              Omega Exports International
+            <h1 className="text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-[1.15] sm:leading-[1.1] drop-shadow-lg">
+              OMEGA EXPORTS INTERNATIONAL
             </h1>
-            <p className="text-lg xs:text-xl sm:text-3xl lg:text-4xl text-gold-gradient italic font-normal mt-1 sm:mt-2 drop-shadow-md">
-              “Quality Beyond Borders”
+            <p className="text-xl xs:text-2xl sm:text-4xl text-gold-300 font-serif font-semibold italic drop-shadow-md">
+              {BRAND_INFO.tagline}
             </p>
           </motion.div>
 
-          {/* Subheading / Slide Description */}
+          {/* Key Proposition */}
           <motion.p
-            key={`desc-${currentSlide}`}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-slate-100 text-sm sm:text-lg lg:text-xl font-light leading-relaxed max-w-2xl drop-shadow-lg"
+            className="text-gold-200 text-base sm:text-2xl font-serif font-medium drop-shadow-md"
           >
-            {HERO_SLIDES[currentSlide].subtitle}
+            Connecting Australian products with international markets.
+          </motion.p>
+
+          {/* Subheading / Description Body */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="text-slate-200 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-2xl drop-shadow-lg"
+          >
+            {BRAND_INFO.heroText}
+          </motion.p>
+
+          {/* Vision statement */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-gold-300 font-serif italic text-sm sm:text-lg font-normal"
+          >
+            {BRAND_INFO.heroVision}
           </motion.p>
 
           {/* Action Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 pt-1 sm:pt-4"
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 pt-2 sm:pt-4"
           >
             <button
               onClick={() => onOpenQuote()}
-              className="px-5 py-3 sm:px-8 sm:py-4 bg-gold-gradient text-white text-xs sm:text-base font-semibold rounded-xl shadow-2xl shadow-gold-500/30 hover:shadow-gold-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 sm:gap-3 group min-h-[44px]"
+              className="px-6 py-3.5 sm:px-8 sm:py-4 bg-gold-gradient text-white text-sm sm:text-base font-semibold rounded-xl shadow-2xl shadow-gold-500/30 hover:shadow-gold-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 sm:gap-3 group min-h-[44px]"
             >
               <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-gold-100" />
               <span>Get a Quotation</span>
@@ -141,9 +149,9 @@ export default function Hero({ onOpenQuote }) {
 
             <a
               href="#products"
-              className="px-5 py-3 sm:px-8 sm:py-4 bg-navy-950/80 hover:bg-navy-900 text-white border border-gold-400/40 hover:border-gold-400/70 text-xs sm:text-base font-semibold rounded-xl backdrop-blur-md transition-all text-center flex items-center justify-center min-h-[44px]"
+              className="px-6 py-3.5 sm:px-8 sm:py-4 bg-navy-950/80 hover:bg-navy-900 text-white border border-gold-400/40 hover:border-gold-400/70 text-sm sm:text-base font-semibold rounded-xl backdrop-blur-md transition-all text-center flex items-center justify-center min-h-[44px]"
             >
-              Explore Product Lineup
+              Explore Our Products
             </a>
           </motion.div>
 

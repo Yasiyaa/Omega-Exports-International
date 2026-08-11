@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Globe, Clock, ShieldCheck } from 'lucide-react';
+import { Send, CheckCircle2, ShieldCheck, Mail, Building, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Contact({ onOpenQuote }) {
@@ -8,7 +8,9 @@ export default function Contact({ onOpenQuote }) {
     name: '',
     email: '',
     company: '',
-    subject: 'General Trade Inquiry',
+    product: 'Meat & Protein',
+    quantity: '',
+    destination: '',
     message: ''
   });
 
@@ -22,59 +24,61 @@ export default function Contact({ onOpenQuote }) {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-24 bg-warm-100 relative">
+    <section id="contact" className="py-16 sm:py-24 bg-[#faf8f5] text-navy-950 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-100 text-gold-600 text-[11px] sm:text-xs font-semibold uppercase tracking-widest border border-gold-300">
-            <Mail className="w-3.5 h-3.5" />
-            <span>Connect With Us</span>
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3 sm:space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-700 text-xs font-semibold uppercase tracking-widest">
+            <Mail className="w-4 h-4 text-gold-600" />
+            <span>International Inquiries</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif font-bold text-navy-900 tracking-tight">
-            International Trade Desk & Contact
+          <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#072042] tracking-tight">
+            Contact & Quotation Desk
           </h2>
           <p className="text-slate-600 text-sm sm:text-lg font-light leading-relaxed">
-            Get in touch with our food export division to discuss product specifications, cold-chain freight schedules, or custom packaging options.
+            Connecting Australian producers with international buyers around the world.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
           
-          {/* Left Column: Direct Contact Info & Quick Actions */}
+          {/* Left Column: Corporate Info */}
           <div className="lg:col-span-5 space-y-6">
             
-            <div className="bg-navy-900 rounded-2xl p-5 sm:p-8 text-white shadow-xl border border-gold-500/20 space-y-5 sm:space-y-6">
+            <div className="bg-[#072042] rounded-3xl p-6 sm:p-10 text-white shadow-xl border border-gold-500/30 space-y-6">
               <div>
-                <span className="text-[11px] sm:text-xs uppercase tracking-widest text-gold-400 font-bold">Trade Enquiries</span>
-                <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-1">Omega Exports Trade Office</h3>
-                <p className="text-slate-300 text-xs sm:text-sm mt-2 font-light">
-                  Our trade desk provides responsive service for global importers across multiple timezones.
+                <span className="text-xs uppercase tracking-widest text-gold-400 font-bold">Australian Office</span>
+                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mt-1">
+                  OMEGA EXPORTS INTERNATIONAL Pty Ltd
+                </h3>
+                <p className="text-slate-300 text-xs sm:text-sm mt-2 font-light leading-relaxed">
+                  Australian based international export and trading company connecting quality products with overseas markets.
                 </p>
               </div>
 
               <div className="space-y-4 pt-4 border-t border-slate-800 text-xs sm:text-sm">
                 <div className="flex items-start gap-3">
-                  <Mail className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
+                  <Globe className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-[11px] text-slate-400 block font-medium">Export Inquiries Email</span>
-                    <span className="font-medium text-white break-all">trade@omegaexports.com</span>
+                    <span className="text-xs text-slate-400 block font-medium">Headquarters</span>
+                    <span className="font-medium text-white">Melbourne, Victoria, Australia</span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
+                  <Building className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-[11px] text-slate-400 block font-medium">Global Trade Line</span>
-                    <span className="font-medium text-white">+1 (800) OMEGA-FOOD / International Desk</span>
+                    <span className="text-xs text-slate-400 block font-medium">Entity Type</span>
+                    <span className="font-medium text-white">Australian Proprietary Company (Pty Ltd)</span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
+                  <ShieldCheck className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-[11px] text-slate-400 block font-medium">Operating Hours</span>
-                    <span className="font-medium text-white">Monday – Friday: 08:00 – 18:00 (UTC/GMT)</span>
+                    <span className="text-xs text-slate-400 block font-medium">Operational Focus</span>
+                    <span className="font-medium text-white">Australia to Global Export Channels</span>
                   </div>
                 </div>
               </div>
@@ -84,133 +88,170 @@ export default function Contact({ onOpenQuote }) {
                   onClick={() => onOpenQuote()}
                   className="w-full py-3.5 bg-gold-gradient text-white text-xs uppercase tracking-wider font-semibold rounded-xl shadow-lg hover:opacity-95 transition-all text-center block min-h-[44px]"
                 >
-                  Open Quotation Request Form
+                  Open Quotation Modal Form
                 </button>
               </div>
             </div>
 
-            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-warm-300 shadow-sm space-y-3">
-              <div className="flex items-center gap-2 text-navy-900 font-semibold text-xs sm:text-sm">
-                <ShieldCheck className="w-4 h-4 text-gold-500 shrink-0" />
-                <span>Fast Business Response</span>
-              </div>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
-                For detailed freight schedules and price quotations, please use the quotation form to specify your target destination port and container volume.
+            <div className="bg-white p-6 rounded-3xl border border-gold-500/20 shadow-sm space-y-2">
+              <span className="text-xs font-serif font-bold text-[#072042] uppercase tracking-wider block">
+                Brand Promise
+              </span>
+              <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed">
+                Quality Beyond Borders. From Australia to the World. Premium products, trusted partnerships, global reach.
               </p>
             </div>
 
           </div>
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7 bg-white rounded-2xl p-5 sm:p-8 shadow-executive border border-warm-300">
+          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gold-500/20">
             {submitted ? (
               <div className="text-center py-8 sm:py-12 space-y-4">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10" />
+                <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-serif font-bold text-navy-900">Message Sent Successfully</h3>
-                <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto">
-                  Thank you for reaching out to Omega Exports International. Our trade desk will respond to your inquiry shortly.
+                <h3 className="text-2xl font-serif font-bold text-[#072042]">Request Submitted</h3>
+                <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
+                  Thank you for your interest in Omega Exports International. Our team will review your requirement details and get back to you.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-4 px-6 py-3 bg-navy-900 text-white text-xs font-semibold rounded-xl min-h-[44px]"
+                  className="mt-4 px-8 py-3 bg-[#072042] text-white text-xs sm:text-sm font-semibold rounded-xl min-h-[44px]"
                 >
-                  Send Another Message
+                  Submit Another Request
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
-                <h3 className="text-lg sm:text-xl font-serif font-bold text-navy-900 mb-2">Send a General Inquiry</h3>
+                <div>
+                  <h3 className="text-2xl font-serif font-bold text-[#072042]">
+                    Tell Us What You Are Looking For
+                  </h3>
+                  <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed mt-1">
+                    Looking for Australian meat, fresh produce or selected food products? Send us your requirements and our team can review your request.
+                  </p>
+                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                   <div>
-                    <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
-                      Full Name
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                      Name <span className="text-rose-500">*</span>
                     </label>
                     <input
                       type="text"
                       name="name"
                       required
-                      placeholder="e.g. Sarah Jenkins"
+                      placeholder="Your Name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 bg-warm-50 border border-warm-300 rounded-xl text-base sm:text-sm text-slate-800 focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none"
+                      className="w-full px-4 py-2.5 bg-[#faf8f5] border border-warm-300 rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
-                      Business Email
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                      Email <span className="text-rose-500">*</span>
                     </label>
                     <input
                       type="email"
                       name="email"
                       required
-                      placeholder="e.g. s.jenkins@globalimporters.com"
+                      placeholder="business@company.com"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 bg-warm-50 border border-warm-300 rounded-xl text-base sm:text-sm text-slate-800 focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none"
+                      className="w-full px-4 py-2.5 bg-[#faf8f5] border border-warm-300 rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
-                      Company Name
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                      Company <span className="text-rose-500">*</span>
                     </label>
                     <input
                       type="text"
                       name="company"
                       required
-                      placeholder="e.g. Apex Commodities"
+                      placeholder="Company Name"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 bg-warm-50 border border-warm-300 rounded-xl text-base sm:text-sm text-slate-800 focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none"
+                      className="w-full px-4 py-2.5 bg-[#faf8f5] border border-warm-300 rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
-                      Inquiry Subject
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                      Product <span className="text-rose-500">*</span>
                     </label>
                     <select
-                      name="subject"
-                      value={formData.subject}
+                      name="product"
+                      value={formData.product}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 bg-warm-50 border border-warm-300 rounded-xl text-base sm:text-sm text-slate-800 focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none"
+                      className="w-full px-4 py-2.5 bg-[#faf8f5] border border-warm-300 rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none"
                     >
-                      <option value="General Trade Inquiry">General Trade Inquiry</option>
-                      <option value="Product Specifications">Product Specifications</option>
-                      <option value="Logistics & Shipping Lines">Logistics & Shipping Lines</option>
-                      <option value="Private Label Sourcing">Private Label Sourcing</option>
+                      <option value="Meat & Protein">Meat & Protein</option>
+                      <option value="Fresh Produce">Fresh Produce</option>
+                      <option value="Food & Agricultural Products">Food & Agricultural Products</option>
+                      <option value="Multiple Product Portfolio">Multiple Product Portfolio</option>
                     </select>
                   </div>
                 </div>
 
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                      Quantity <span className="text-rose-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="quantity"
+                      required
+                      placeholder="Required Quantity"
+                      value={formData.quantity}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2.5 bg-[#faf8f5] border border-warm-300 rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                      Destination <span className="text-rose-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="destination"
+                      required
+                      placeholder="Destination Port / Country"
+                      value={formData.destination}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2.5 bg-[#faf8f5] border border-warm-300 rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none"
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <label className="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
-                    Your Message
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                    Message
                   </label>
                   <textarea
                     name="message"
                     rows={4}
-                    required
-                    placeholder="Write your inquiry here..."
+                    placeholder="Provide details about your requirements..."
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-2.5 bg-warm-50 border border-warm-300 rounded-xl text-base sm:text-sm text-slate-800 focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none"
+                    className="w-full px-4 py-2.5 bg-[#faf8f5] border border-warm-300 rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none"
                   ></textarea>
                 </div>
 
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-8 py-3 bg-navy-900 hover:bg-navy-800 text-white font-semibold text-xs sm:text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 min-h-[44px]"
+                    className="w-full sm:w-auto px-8 py-3.5 bg-gold-gradient hover:opacity-95 text-white font-semibold uppercase tracking-wider text-xs sm:text-sm rounded-xl shadow-lg shadow-gold-500/20 transition-all flex items-center justify-center gap-2 min-h-[44px]"
                   >
-                    <Send className="w-4 h-4 text-gold-400" />
-                    <span>Submit Inquiry</span>
+                    <Send className="w-4 h-4" />
+                    <span>Request a Quotation</span>
                   </button>
                 </div>
               </form>
@@ -223,4 +264,3 @@ export default function Contact({ onOpenQuote }) {
     </section>
   );
 }
-

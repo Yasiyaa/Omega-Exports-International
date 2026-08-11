@@ -33,9 +33,9 @@ export default function Navbar({ onOpenQuote }) {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'Products', href: '#products' },
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
+    { name: 'Markets', href: '#markets' },
+    { name: 'Why Omega', href: '#why-omega' },
+    { name: 'Leadership', href: '#leadership' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -57,16 +57,16 @@ export default function Navbar({ onOpenQuote }) {
                 <Globe className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
               </div>
               <div>
-                <div className="flex items-center gap-1">
-                  <span className="font-serif text-base sm:text-2xl font-bold tracking-tight text-white group-hover:text-gold-300 transition-colors">
-                    OMEGA
+                <div className="flex items-center gap-1.5">
+                  <span className="font-serif text-base sm:text-xl font-bold tracking-tight text-white group-hover:text-gold-300 transition-colors">
+                    OMEGA EXPORTS
                   </span>
                   <span className="text-[9px] sm:text-xs uppercase tracking-widest text-gold-400 font-semibold px-1 py-0.5 border border-gold-500/30 rounded bg-navy-900/60 inline-block">
-                    Exports
+                    Pty Ltd
                   </span>
                 </div>
                 <p className="text-[9px] sm:text-[10px] tracking-wider uppercase text-gold-200/80 font-medium hidden xs:block">
-                  Quality Beyond Borders
+                  Australian Quality. Global Ambition.
                 </p>
               </div>
             </a>
@@ -91,7 +91,7 @@ export default function Navbar({ onOpenQuote }) {
                 className="px-3 py-2 sm:px-5 sm:py-2.5 bg-gold-gradient text-white text-xs sm:text-sm font-semibold rounded-xl shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-1.5 sm:gap-2 shrink-0 min-h-[40px] sm:min-h-[44px]"
               >
                 <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-100" />
-                <span>Get Quote</span>
+                <span>Get a Quotation</span>
               </button>
 
               {/* Mobile Hamburger Menu Button */}

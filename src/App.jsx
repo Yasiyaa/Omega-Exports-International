@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Introduction from './components/Introduction';
 import Products from './components/Products';
-import Solutions from './components/Solutions';
-import Services from './components/Services';
-import About from './components/About';
+import Markets from './components/Markets';
+import WhyOmega from './components/WhyOmega';
+import Leadership from './components/Leadership';
+import VisionCommitment from './components/VisionCommitment';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import QuoteModal from './components/QuoteModal';
@@ -23,24 +25,26 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-warm-100 text-slate-800 flex flex-col font-sans">
+    <div className="min-h-screen bg-[#faf8f5] text-slate-800 flex flex-col font-sans">
       {/* Sticky Navigation Header */}
       <Navbar onOpenQuote={handleOpenQuote} />
 
-      {/* Main Content Sections */}
+      {/* Main Corporate Sections */}
       <main className="flex-grow">
         <Hero onOpenQuote={handleOpenQuote} />
+        <Introduction />
         <Products onOpenQuote={handleOpenQuote} />
-        <Solutions onOpenQuote={handleOpenQuote} />
-        <Services onOpenQuote={handleOpenQuote} />
-        <About onOpenQuote={handleOpenQuote} />
+        <Markets onOpenQuote={handleOpenQuote} />
+        <WhyOmega onOpenQuote={handleOpenQuote} />
+        <Leadership />
+        <VisionCommitment onOpenQuote={handleOpenQuote} />
         <Contact onOpenQuote={handleOpenQuote} />
       </main>
 
-      {/* Footer */}
+      {/* Corporate Footer */}
       <Footer onOpenQuote={handleOpenQuote} />
 
-      {/* Reusable B2B Quotation Modal */}
+      {/* B2B Quotation Request Modal */}
       <QuoteModal
         isOpen={isQuoteOpen}
         onClose={handleCloseQuote}
