@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Briefcase, GraduationCap, Building, Award } from 'lucide-react';
+import { Users, ShieldCheck } from 'lucide-react';
 import { LEADERSHIP_PROFILES } from '../data/siteData';
 
 export default function Leadership() {
@@ -10,7 +10,7 @@ export default function Leadership() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3 sm:space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-700 text-xs font-semibold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-700 text-xs font-semibold uppercase tracking-widest">
             <Users className="w-4 h-4 text-gold-600" />
             <span>Executive Board</span>
           </div>
@@ -22,7 +22,7 @@ export default function Leadership() {
           </p>
         </div>
 
-        {/* 2 Director Profiles */}
+        {/* 2 Centered Director Cards with Round Photos & Blue Circular Frames */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {LEADERSHIP_PROFILES.map((profile, idx) => (
             <motion.div
@@ -31,35 +31,49 @@ export default function Leadership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="bg-[#faf8f5] rounded-3xl p-6 sm:p-10 border border-gold-500/20 shadow-xl flex flex-col justify-between space-y-6"
+              className="bg-[#faf8f5] rounded-3xl p-6 sm:p-10 border border-gold-500/20 shadow-xl flex flex-col justify-between space-y-6 hover:shadow-2xl transition-all duration-300"
             >
               <div className="space-y-6">
-                <div className="flex items-center gap-5">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#072042] text-gold-400 font-serif text-2xl font-bold flex items-center justify-center shrink-0 shadow-lg">
-                    {profile.name.split(' ').map(n => n[0]).join('')}
+                
+                {/* Centered Profile Photo & Title Block */}
+                <div className="text-center space-y-3 pb-6 border-b border-warm-200">
+                  
+                  {/* Round Photo with Blue (Navy #072042) Frame Ring */}
+                  <div className="relative mx-auto w-28 h-28 sm:w-36 sm:h-36 rounded-full border-4 border-[#072042] p-1 bg-white shadow-xl ring-4 ring-gold-500/30">
+                    <img
+                      src={profile.image}
+                      alt={profile.name}
+                      className="w-full h-full rounded-full object-cover object-center"
+                    />
                   </div>
-                  <div>
+
+                  <div className="pt-2">
+                    <span className="inline-block px-3.5 py-0.5 rounded-full bg-gold-500/15 border border-gold-500/30 text-gold-800 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                      {profile.role}
+                    </span>
                     <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#072042]">
                       {profile.name}
                     </h3>
-                    <div className="inline-block px-3 py-0.5 mt-1 rounded-md bg-gold-500/15 border border-gold-500/30 text-gold-800 text-xs font-semibold uppercase tracking-wider">
-                      {profile.role}
-                    </div>
+                    <span className="text-xs text-slate-500 font-medium block mt-0.5">
+                      Omega Exports International Pty Ltd
+                    </span>
                   </div>
                 </div>
 
-                <div className="space-y-3 text-slate-700 text-sm sm:text-base leading-relaxed font-light whitespace-pre-line">
+                {/* Director Biography */}
+                <div className="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed font-light whitespace-pre-line text-left">
                   {profile.bio}
                 </div>
               </div>
 
+              {/* Card Footer Badge */}
               <div className="pt-4 border-t border-warm-300 flex items-center justify-between text-xs text-slate-500 font-medium">
-                <span className="flex items-center gap-1.5">
-                  <Building className="w-4 h-4 text-gold-600" />
-                  Omega Exports International Pty Ltd
+                <span className="flex items-center gap-1.5 text-[#072042] font-semibold">
+                  <ShieldCheck className="w-4 h-4 text-gold-600" />
+                  Executive Governance
                 </span>
                 <span className="text-gold-700 font-semibold uppercase tracking-wider">
-                  Executive Director
+                  Board Director
                 </span>
               </div>
             </motion.div>

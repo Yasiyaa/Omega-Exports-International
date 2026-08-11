@@ -52,20 +52,20 @@ export default function Navbar({ onOpenQuote }) {
           <div className="flex items-center justify-between gap-2">
             
             {/* Logo & Tagline */}
-            <a href="#home" className="flex items-center gap-2 sm:gap-3 group focus:outline-none shrink-0">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gold-gradient flex items-center justify-center shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
-                <Globe className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+            <a href="#home" className="flex items-center gap-1.5 sm:gap-3 group focus:outline-none shrink-0">
+              <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl bg-gold-gradient flex items-center justify-center shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform shrink-0">
+                <Globe className="w-3.5 h-3.5 sm:w-6 sm:h-6 text-white" />
               </div>
               <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="font-serif text-base sm:text-xl font-bold tracking-tight text-white group-hover:text-gold-300 transition-colors">
+                <div className="flex items-center gap-1">
+                  <span className="font-serif text-xs xs:text-sm sm:text-xl font-bold tracking-tight text-white group-hover:text-gold-300 transition-colors">
                     OMEGA EXPORTS
                   </span>
-                  <span className="text-[9px] sm:text-xs uppercase tracking-widest text-gold-400 font-semibold px-1 py-0.5 border border-gold-500/30 rounded bg-navy-900/60 inline-block">
+                  <span className="hidden xs:inline-block text-[8px] sm:text-xs uppercase tracking-widest text-gold-400 font-semibold px-1 py-0.5 border border-gold-500/30 rounded bg-navy-900/60 shrink-0">
                     Pty Ltd
                   </span>
                 </div>
-                <p className="text-[9px] sm:text-[10px] tracking-wider uppercase text-gold-200/80 font-medium hidden xs:block">
+                <p className="text-[9px] sm:text-[10px] tracking-wider uppercase text-gold-200/80 font-medium hidden sm:block">
                   Australian Quality. Global Ambition.
                 </p>
               </div>
@@ -85,13 +85,14 @@ export default function Navbar({ onOpenQuote }) {
             </nav>
 
             {/* Quotation CTA Button & Mobile Toggle */}
-            <div className="flex items-center gap-2 sm:gap-4">
+            <div className="flex items-center gap-1.5 sm:gap-4 shrink-0">
               <button
                 onClick={() => onOpenQuote()}
-                className="px-3 py-2 sm:px-5 sm:py-2.5 bg-gold-gradient text-white text-xs sm:text-sm font-semibold rounded-xl shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-1.5 sm:gap-2 shrink-0 min-h-[40px] sm:min-h-[44px]"
+                className="px-2.5 py-1.5 sm:px-5 sm:py-2.5 bg-gold-gradient text-white text-[11px] sm:text-sm font-semibold rounded-xl shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-1 sm:gap-2 shrink-0 min-h-[36px] sm:min-h-[44px]"
               >
-                <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-100" />
-                <span>Get a Quotation</span>
+                <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-100 shrink-0" />
+                <span className="hidden sm:inline">Get a Quotation</span>
+                <span className="sm:hidden">Get Quote</span>
               </button>
 
               {/* Mobile Hamburger Menu Button */}

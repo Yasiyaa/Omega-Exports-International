@@ -109,7 +109,12 @@ export default function Footer({ onOpenQuote }) {
 
         {/* Bottom Credits & Copyright */}
         <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 text-center sm:text-left">
-          <p>© {new Date().getFullYear()} Omega Exports International Pty Ltd. All rights reserved.</p>
+          <div className="space-y-1">
+            <p>© {new Date().getFullYear()} Omega Exports International Pty Ltd. All rights reserved.</p>
+            <p className="text-gold-300 font-semibold text-xs tracking-wider">
+              ABN: <span className="text-white font-mono">41 701 214 002</span>
+            </p>
+          </div>
 
           <div className="flex items-center gap-4 sm:gap-6">
             <span className="flex items-center gap-1.5 text-slate-300 text-xs">
