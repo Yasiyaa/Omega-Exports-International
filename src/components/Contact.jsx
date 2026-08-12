@@ -222,7 +222,7 @@ export default function Contact({ onOpenQuote }) {
                       type="text"
                       name="quantity"
                       required
-                      placeholder="Required Quantity"
+                      placeholder="e.g. Kg to Container"
                       value={formData.quantity}
                       onChange={handleChange}
                       className="w-full px-4 py-2.5 bg-[#faf8f5] border border-warm-300 rounded-xl text-sm text-slate-800 focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none"

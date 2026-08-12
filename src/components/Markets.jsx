@@ -86,17 +86,6 @@ export default function Markets({ onOpenQuote }) {
             </motion.div>
           ))}
         </div>
-
-        {/* Strategic Growth Banner */}
-        <div className="bg-navy-950/90 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-gold-500/40 text-center space-y-2 shadow-2xl">
-          <span className="text-xs uppercase tracking-widest text-gold-400 font-bold block">
-            Strategic Growth Promise
-          </span>
-          <p className="text-lg sm:text-2xl font-serif text-white font-medium">
-            “{BRAND_INFO.introHighlight}”
-          </p>
-        </div>
-
       </div>
     </section>
   );
