@@ -74,9 +74,9 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
           <div className="bg-[#072042] px-6 py-5 text-white flex items-center justify-between border-b border-gold-500/20 shrink-0">
             <div className="flex items-center gap-3">
               <img
-                src="/assets/logo-01.png"
+                src="/assets/1 logo_Logo concept 1 copy 2.png"
                 alt="Omega Exports Logo"
-                className="h-9 sm:h-10 w-auto object-contain filter drop-shadow-sm shrink-0"
+                className="h-8 sm:h-10 w-auto object-contain filter brightness-110 contrast-125 shrink-0"
               />
               <div>
                 <span className="text-xs uppercase tracking-widest text-gold-400 font-bold block">

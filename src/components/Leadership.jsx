@@ -39,7 +39,7 @@ export default function Leadership() {
                 <div className="text-center space-y-3 pb-6 border-b border-warm-200">
                   
                   {/* Round Photo with Blue (Navy #072042) Frame Ring */}
-                  <div className="relative mx-auto w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-4 sm:border-[6px] lg:border-[8px] border-[#072042] overflow-hidden shadow-2xl ring-4 sm:ring-6 lg:ring-8 ring-gold-500/30">
+                  <div className="relative mx-auto w-36 h-36 xs:w-48 xs:h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-4 sm:border-[6px] lg:border-[8px] border-[#072042] overflow-hidden shadow-2xl ring-4 sm:ring-6 lg:ring-8 ring-gold-500/30">
                     <img
                       src={profile.image}
                       alt={profile.name}

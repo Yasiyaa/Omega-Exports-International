@@ -9,15 +9,15 @@ export default function Footer({ onOpenQuote }) {
   };
 
   return (
-    <footer className="bg-[#f0ebd9] text-[#072042] pt-14 sm:pt-18 pb-10 border-t-2 border-gold-500/40 relative overflow-hidden">
+    <footer className="bg-white text-[#072042] pt-14 sm:pt-18 pb-10 border-t border-slate-200/90 relative overflow-hidden shadow-inner">
       {/* Background lighting */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-96 h-96 bg-slate-100/50 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-14 border-b border-gold-500/30">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-14 border-b border-slate-200">
           
           {/* Brand & Executive Summary (5 cols) */}
           <div className="sm:col-span-2 lg:col-span-5 space-y-4">
@@ -25,7 +25,7 @@ export default function Footer({ onOpenQuote }) {
               <img
                 src="/assets/logo-01.png"
                 alt="Omega Exports International"
-                className="h-16 sm:h-24 lg:h-28 w-auto max-h-28 object-contain filter contrast-130 brightness-90 group-hover:scale-105 transition-transform shrink-0"
+                className="h-24 sm:h-36 lg:h-44 w-auto max-h-44 object-contain filter contrast-130 brightness-90 group-hover:scale-105 transition-transform shrink-0"
               />
             </a>
 
@@ -80,13 +80,13 @@ export default function Footer({ onOpenQuote }) {
               <span>Get a Quotation</span>
             </button>
 
-            {/* Cert.png Displayed with Registered on label */}
+            {/* ASIC Registration Badge */}
             <div className="pt-3.5 space-y-1.5 flex flex-col items-start sm:items-center lg:items-start">
               <span className="text-[11px] sm:text-xs uppercase tracking-wider text-gold-800 font-bold">
                 Registered on
               </span>
               <img
-                src={certImg}
+                src="/assets/asic-29.png"
                 alt="Australian Securities & Investments Commission Registration Badge"
                 className="w-full max-w-[240px] sm:max-w-[300px] h-auto max-h-36 sm:max-h-44 md:max-h-48 object-contain filter drop-shadow-md"
               />
@@ -113,7 +113,7 @@ export default function Footer({ onOpenQuote }) {
 
             <button
               onClick={scrollToTop}
-              className="p-2.5 rounded-xl bg-white border border-gold-500/40 text-[#072042] hover:text-white hover:bg-[#072042] transition-colors focus:outline-none min-w-[40px] min-h-[40px] flex items-center justify-center shadow-sm"
+              className="p-2.5 rounded-xl bg-slate-100 border border-slate-300 text-[#072042] hover:text-white hover:bg-[#072042] transition-colors focus:outline-none min-w-[40px] min-h-[40px] flex items-center justify-center shadow-sm"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />
