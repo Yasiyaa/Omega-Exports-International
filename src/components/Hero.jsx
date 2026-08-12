@@ -45,7 +45,7 @@ export default function Hero({ onOpenQuote }) {
   };
 
   return (
-    <section id="home" className="relative min-h-[100dvh] pt-20 sm:pt-32 pb-20 sm:pb-24 flex items-center bg-navy-950 text-white overflow-hidden">
+    <section id="home" className="relative min-h-[100dvh] pt-28 sm:pt-36 lg:pt-44 pb-20 sm:pb-24 flex items-center bg-navy-950 text-white overflow-hidden">
       {/* Background Image Slider */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">

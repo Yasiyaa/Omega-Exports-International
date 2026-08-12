@@ -72,13 +72,20 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
         >
           {/* Header Bar */}
           <div className="bg-[#072042] px-6 py-5 text-white flex items-center justify-between border-b border-gold-500/20 shrink-0">
-            <div>
-              <span className="text-xs uppercase tracking-widest text-gold-400 font-bold block">
-                Omega Exports International
-              </span>
-              <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-0.5">
-                Tell Us What You Are Looking For
-              </h3>
+            <div className="flex items-center gap-3">
+              <img
+                src="/assets/logo-01.png"
+                alt="Omega Exports Logo"
+                className="h-9 sm:h-10 w-auto object-contain filter drop-shadow-sm shrink-0"
+              />
+              <div>
+                <span className="text-xs uppercase tracking-widest text-gold-400 font-bold block">
+                  Omega Exports International
+                </span>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-0.5">
+                  Tell Us What You Are Looking For
+                </h3>
+              </div>
             </div>
             <button
               onClick={onClose}

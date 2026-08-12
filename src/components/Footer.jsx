@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, FileText, ArrowUp, ShieldCheck } from 'lucide-react';
+import { FileText, ArrowUp, ShieldCheck } from 'lucide-react';
 import certImg from '../assets/Cert.png';
 import { BRAND_INFO } from '../data/siteData';
 
@@ -9,63 +9,52 @@ export default function Footer({ onOpenQuote }) {
   };
 
   return (
-    <footer className="bg-[#072042] text-white pt-12 sm:pt-16 pb-8 border-t border-gold-500/30 relative overflow-hidden">
+    <footer className="bg-[#f0ebd9] text-[#072042] pt-14 sm:pt-18 pb-10 border-t-2 border-gold-500/40 relative overflow-hidden">
       {/* Background lighting */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-96 h-96 bg-navy-800/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-14 border-b border-slate-800/80">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-14 border-b border-gold-500/30">
           
           {/* Brand & Executive Summary (5 cols) */}
           <div className="sm:col-span-2 lg:col-span-5 space-y-4">
-            <a href="#home" className="flex items-center gap-3 group focus:outline-none shrink-0 inline-flex">
-              <div className="w-10 h-10 rounded-xl bg-gold-gradient flex items-center justify-center shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
-                <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </div>
-              <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-gold-300 transition-colors">
-                    OMEGA EXPORTS
-                  </span>
-                  <span className="text-[10px] uppercase tracking-widest text-gold-400 font-semibold px-1.5 py-0.5 border border-gold-500/30 rounded bg-navy-900/60 inline-block">
-                    Pty Ltd
-                  </span>
-                </div>
-                <p className="text-[10px] tracking-wider uppercase text-gold-300 font-medium">
-                  {BRAND_INFO.tagline}
-                </p>
-              </div>
+            <a href="#home" className="flex items-center group focus:outline-none shrink-0 inline-flex">
+              <img
+                src="/assets/logo-01.png"
+                alt="Omega Exports International"
+                className="h-16 sm:h-24 lg:h-28 w-auto max-h-28 object-contain filter contrast-130 brightness-90 group-hover:scale-105 transition-transform shrink-0"
+              />
             </a>
 
-            <p className="text-slate-300 text-sm font-light leading-relaxed max-w-md">
+            <p className="text-slate-700 text-sm sm:text-base font-normal leading-relaxed max-w-md">
               Connecting Australian products with international markets. Sourcing and supplying quality Australian meat, fresh produce and selected food products for international markets.
             </p>
 
-            <div className="pt-2 flex flex-col space-y-1 text-xs text-gold-300 font-serif italic">
+            <div className="pt-2 flex flex-col space-y-1 text-xs sm:text-sm text-gold-700 font-serif italic font-medium">
               <span>“{BRAND_INFO.brandPromise}”</span>
-              <span className="text-slate-300 font-sans not-italic font-normal">{BRAND_INFO.positioning}</span>
+              <span className="text-[#072042] font-sans not-italic font-semibold">{BRAND_INFO.positioning}</span>
             </div>
           </div>
 
           {/* Quick Links (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs uppercase tracking-widest text-gold-400 font-bold">
+            <h4 className="text-xs uppercase tracking-widest text-gold-800 font-bold">
               Navigation & Resources
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
-              <li><a href="#home" className="hover:text-gold-400 transition-colors py-0.5 block">Home</a></li>
-              <li><a href="#products" className="hover:text-gold-400 transition-colors py-0.5 block">Products</a></li>
-              <li><a href="#markets" className="hover:text-gold-400 transition-colors py-0.5 block">Markets</a></li>
-              <li><a href="#why-omega" className="hover:text-gold-400 transition-colors py-0.5 block">Why Omega</a></li>
-              <li><a href="#leadership" className="hover:text-gold-400 transition-colors py-0.5 block">Leadership</a></li>
-              <li><a href="#contact" className="hover:text-gold-400 transition-colors py-0.5 block">Contact</a></li>
+            <ul className="space-y-2 text-xs sm:text-sm text-[#072042] font-semibold">
+              <li><a href="#home" className="hover:text-gold-600 transition-colors py-0.5 block">Home</a></li>
+              <li><a href="#products" className="hover:text-gold-600 transition-colors py-0.5 block">Products</a></li>
+              <li><a href="#markets" className="hover:text-gold-600 transition-colors py-0.5 block">Markets</a></li>
+              <li><a href="#why-omega" className="hover:text-gold-600 transition-colors py-0.5 block">Why Omega</a></li>
+              <li><a href="#leadership" className="hover:text-gold-600 transition-colors py-0.5 block">Leadership</a></li>
+              <li><a href="#contact" className="hover:text-gold-600 transition-colors py-0.5 block">Contact</a></li>
               <li>
                 <button
                   onClick={() => onOpenQuote()}
-                  className="hover:text-gold-400 transition-colors py-0.5 text-left font-semibold text-gold-300 block"
+                  className="hover:text-gold-700 transition-colors py-0.5 text-left font-bold text-gold-800 block"
                 >
                   Get a Quotation
                 </button>
@@ -75,17 +64,17 @@ export default function Footer({ onOpenQuote }) {
 
           {/* Quotation CTA & ASIC Badge (4 cols) */}
           <div className="sm:col-span-2 md:col-span-3 lg:col-span-4 space-y-4">
-            <h4 className="text-xs uppercase tracking-widest text-gold-400 font-bold">
+            <h4 className="text-xs uppercase tracking-widest text-gold-800 font-bold">
               B2B Trade Inquiries
             </h4>
             
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
               Looking for Australian meat, fresh produce or selected food products?
             </p>
 
             <button
               onClick={() => onOpenQuote()}
-              className="w-full py-3 px-4 bg-gold-gradient hover:opacity-95 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-xl shadow-lg shadow-gold-500/20 flex items-center justify-center gap-2 min-h-[44px] transition-transform active:scale-[0.98]"
+              className="w-full py-3 px-4 bg-gold-gradient hover:opacity-95 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-xl shadow-md flex items-center justify-center gap-2 min-h-[44px] transition-transform active:scale-[0.98]"
             >
               <FileText className="w-4 h-4 text-gold-100" />
               <span>Get a Quotation</span>
@@ -93,7 +82,7 @@ export default function Footer({ onOpenQuote }) {
 
             {/* Cert.png Displayed with Registered on label */}
             <div className="pt-3.5 space-y-1.5 flex flex-col items-start sm:items-center lg:items-start">
-              <span className="text-[11px] sm:text-xs uppercase tracking-wider text-gold-400 font-bold">
+              <span className="text-[11px] sm:text-xs uppercase tracking-wider text-gold-800 font-bold">
                 Registered on
               </span>
               <img
@@ -108,23 +97,23 @@ export default function Footer({ onOpenQuote }) {
         </div>
 
         {/* Bottom Credits & Copyright */}
-        <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 text-center sm:text-left">
+        <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-700 text-center sm:text-left font-medium">
           <div className="space-y-1">
             <p>© {new Date().getFullYear()} Omega Exports International Pty Ltd. All rights reserved.</p>
-            <p className="text-gold-300 font-semibold text-xs tracking-wider">
-              ABN: <span className="text-white font-mono">41 701 214 002</span>
+            <p className="text-gold-800 font-bold text-xs tracking-wider">
+              ABN: <span className="text-[#072042] font-mono font-bold">41 701 214 002</span>
             </p>
           </div>
 
           <div className="flex items-center gap-4 sm:gap-6">
-            <span className="flex items-center gap-1.5 text-slate-300 text-xs">
-              <ShieldCheck className="w-4 h-4 text-gold-400 shrink-0" />
+            <span className="flex items-center gap-1.5 text-[#072042] text-xs font-semibold">
+              <ShieldCheck className="w-4 h-4 text-gold-700 shrink-0" />
               Australian Quality. Global Ambition.
             </span>
 
             <button
               onClick={scrollToTop}
-              className="p-2.5 rounded-xl bg-navy-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-gold-500 transition-colors focus:outline-none min-w-[40px] min-h-[40px] flex items-center justify-center"
+              className="p-2.5 rounded-xl bg-white border border-gold-500/40 text-[#072042] hover:text-white hover:bg-[#072042] transition-colors focus:outline-none min-w-[40px] min-h-[40px] flex items-center justify-center shadow-sm"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />
