@@ -68,36 +68,36 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.95, opacity: 0, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden z-10 border border-gold-500/30 my-4 sm:my-8 max-h-[92vh] flex flex-col"
+          className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden z-10 border border-gold-500/30 my-2 sm:my-8 max-h-[92dvh] flex flex-col"
         >
           {/* Header Bar */}
-          <div className="bg-[#072042] px-6 py-5 text-white flex items-center justify-between border-b border-gold-500/20 shrink-0">
-            <div className="flex items-center gap-3">
+          <div className="bg-[#072042] px-4 xs:px-6 py-3.5 sm:py-5 text-white flex items-center justify-between border-b border-gold-500/20 shrink-0 gap-2">
+            <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
               <img
                 src="/assets/1 logo_Logo concept 1 copy 2.png"
                 alt="Omega Exports Logo"
-                className="h-8 sm:h-10 w-auto object-contain filter brightness-110 contrast-125 shrink-0"
+                className="h-7 xs:h-8 sm:h-10 w-auto object-contain filter brightness-110 contrast-125 shrink-0"
               />
-              <div>
-                <span className="text-xs uppercase tracking-widest text-gold-400 font-bold block">
+              <div className="min-w-0">
+                <span className="text-[10px] sm:text-xs uppercase tracking-widest text-gold-400 font-bold block truncate">
                   Omega Exports International
                 </span>
-                <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-0.5">
+                <h3 className="text-sm xs:text-base sm:text-2xl font-serif font-bold text-white mt-0.5 truncate">
                   Tell Us What You Are Looking For
                 </h3>
               </div>
             </div>
             <button
               onClick={onClose}
-              className="text-slate-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors focus:outline-none"
+              className="text-slate-400 hover:text-white p-1.5 sm:p-2 rounded-full hover:bg-white/10 transition-colors focus:outline-none shrink-0 min-w-[36px] min-h-[36px] flex items-center justify-center"
               aria-label="Close modal"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
 
           {/* Modal Body */}
-          <div className="p-6 sm:p-8 overflow-y-auto flex-1">
+          <div className="p-4 xs:p-6 sm:p-8 overflow-y-auto flex-1">
             {submitted ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
