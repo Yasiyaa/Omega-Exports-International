@@ -31,7 +31,7 @@ export default function Leadership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="bg-[#faf8f5] rounded-3xl p-6 sm:p-10 border border-gold-500/20 shadow-xl flex flex-col justify-between space-y-6 hover:shadow-2xl transition-all duration-300"
+              className="bg-[#faf8f5] rounded-3xl p-5 xs:p-6 sm:p-10 border border-gold-500/20 shadow-xl flex flex-col justify-between space-y-6 hover:shadow-2xl transition-all duration-300"
             >
               <div className="space-y-6">
                 
@@ -39,7 +39,7 @@ export default function Leadership() {
                 <div className="text-center space-y-3 pb-6 border-b border-warm-200">
                   
                   {/* Round Photo with Blue (Navy #072042) Frame Ring */}
-                  <div className="relative mx-auto w-36 h-36 xs:w-48 xs:h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-4 sm:border-[6px] lg:border-[8px] border-[#072042] overflow-hidden shadow-2xl ring-4 sm:ring-6 lg:ring-8 ring-gold-500/30">
+                  <div className="relative mx-auto w-32 h-32 xs:w-44 xs:h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-4 sm:border-[6px] lg:border-[8px] border-[#072042] overflow-hidden shadow-2xl ring-4 sm:ring-6 lg:ring-8 ring-gold-500/30">
                     <img
                       src={profile.image}
                       alt={profile.name}
