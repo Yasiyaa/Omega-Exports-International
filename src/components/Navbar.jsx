@@ -36,6 +36,7 @@ export default function Navbar({ onOpenQuote }) {
     { name: 'Markets', href: '#markets' },
     { name: 'Why Omega', href: '#why-omega' },
     { name: 'Leadership', href: '#leadership' },
+    { name: 'Insights', href: '#insights' },
     { name: 'Contact', href: '#contact' },
   ];
 
