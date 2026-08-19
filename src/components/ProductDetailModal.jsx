@@ -37,18 +37,18 @@ export default function ProductDetailModal({ product, onClose, onRequestQuote })
           className="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden z-10 border border-warm-300 my-4 sm:my-8 max-h-[90dvh] flex flex-col"
         >
           {/* Header Bar */}
-          <div className="bg-navy-900 px-4 sm:px-6 py-3.5 sm:py-4 text-white flex items-center justify-between border-b border-gold-500/20 shrink-0">
-            <div className="flex items-center gap-2 overflow-hidden pr-2">
-              <span className="text-[10px] uppercase tracking-widest text-gold-400 font-bold px-2 py-0.5 rounded bg-navy-950 shrink-0">
+          <div className="bg-white px-4 sm:px-6 py-3.5 sm:py-4 text-slate-800 flex items-center justify-between border-b border-slate-200/90 shrink-0 shadow-xs">
+            <div className="flex items-center gap-2.5 overflow-hidden pr-2">
+              <span className="text-[10px] uppercase tracking-widest text-gold-700 font-bold px-2.5 py-1 rounded-lg bg-gold-500/10 shrink-0 border border-gold-500/20">
                 {product.category.toUpperCase()}
               </span>
-              <h3 className="text-sm sm:text-lg font-serif font-bold text-white truncate">
+              <h3 className="text-sm sm:text-lg font-serif font-bold text-[#072042] truncate">
                 {product.name}
               </h3>
             </div>
             <button
               onClick={onClose}
-              className="text-slate-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors shrink-0 min-w-[36px] min-h-[36px] flex items-center justify-center"
+              className="text-slate-400 hover:text-[#072042] bg-slate-100 hover:bg-slate-200 border border-slate-200/80 p-2 rounded-xl transition-all shrink-0 min-w-[36px] min-h-[36px] flex items-center justify-center cursor-pointer shadow-xs"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />

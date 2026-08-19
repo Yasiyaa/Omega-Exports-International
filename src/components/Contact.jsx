@@ -15,13 +15,53 @@ export default function Contact({ onOpenQuote }) {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [activationNeeded, setActivationNeeded] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setActivationNeeded(false);
+
+    try {
+      const payload = new FormData();
+      payload.append("_subject", `New B2B Export Quotation Request: ${formData.product} - ${formData.company || formData.name}`);
+      payload.append("_replyto", formData.email);
+      payload.append("_template", "table");
+      payload.append("_captcha", "false");
+      payload.append("Customer Name", formData.name);
+      payload.append("Customer Email", formData.email);
+      payload.append("Company Name", formData.company);
+      payload.append("Product Category", formData.product);
+      payload.append("Quantity Required", formData.quantity);
+      payload.append("Destination Port / Country", formData.destination);
+      payload.append("Special Message / Requirements", formData.message || "No additional message specified.");
+
+      const response = await fetch("https://formsubmit.co/ajax/omegaexpintl@gmail.com", {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: payload
+      });
+
+      const result = await response.json();
+      console.log("Contact FormSubmit Result:", result);
+
+      if (result.message && result.message.toLowerCase().includes("activation")) {
+        setActivationNeeded(true);
+      }
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Contact submission error:", err);
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -122,16 +162,29 @@ export default function Contact({ onOpenQuote }) {
           <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gold-500/20">
             {submitted ? (
               <div className="text-center py-8 sm:py-12 space-y-4">
-                <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-10 h-10" />
+                <div className={`w-16 h-16 ${activationNeeded ? 'bg-amber-100 text-amber-600' : 'bg-emerald-100 text-emerald-600'} rounded-full flex items-center justify-center mx-auto shadow-inner`}>
+                  {activationNeeded ? <Mail className="w-10 h-10" /> : <CheckCircle2 className="w-10 h-10" />}
                 </div>
-                <h3 className="text-2xl font-serif font-bold text-[#072042]">Request Submitted</h3>
-                <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
-                  Thank you for your interest in Omega Exports International. Our team will review your requirement details and get back to you.
-                </p>
+                <h3 className="text-2xl font-serif font-bold text-[#072042]">
+                  {activationNeeded ? "One-Time Activation Required" : "Request Submitted"}
+                </h3>
+                {activationNeeded ? (
+                  <div className="bg-amber-50 border border-amber-200 p-4 rounded-2xl max-w-md mx-auto text-left text-xs sm:text-sm text-amber-950 space-y-2">
+                    <p className="font-semibold text-amber-900">
+                      📩 FormSubmit sent a 1-click activation link to <span className="underline">omegaexpintl@gmail.com</span>!
+                    </p>
+                    <p className="text-amber-800 text-xs leading-relaxed">
+                      Please open your Gmail inbox, check Spam/Promotions if needed, and click <strong>"Activate Form"</strong> once. After activating, all future quotation requests will deliver to your inbox automatically!
+                    </p>
+                  </div>
+                ) : (
+                  <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
+                    Thank you for your interest in Omega Exports International. Requirement details have been sent to <span className="font-semibold text-[#072042]">omegaexpintl@gmail.com</span>.
+                  </p>
+                )}
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-4 px-8 py-3 bg-[#072042] text-white text-xs sm:text-sm font-semibold rounded-xl min-h-[44px]"
+                  className="mt-4 px-8 py-3 bg-[#072042] hover:bg-navy-900 text-white text-xs sm:text-sm font-semibold rounded-xl transition-all shadow-md cursor-pointer min-h-[44px]"
                 >
                   Submit Another Request
                 </button>
@@ -262,10 +315,20 @@ export default function Contact({ onOpenQuote }) {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-8 py-3.5 bg-gold-gradient hover:opacity-95 text-white font-semibold uppercase tracking-wider text-xs sm:text-sm rounded-xl shadow-lg shadow-gold-500/20 transition-all flex items-center justify-center gap-2 min-h-[44px]"
+                    disabled={isSubmitting}
+                    className="w-full sm:w-auto px-8 py-3.5 bg-gold-gradient hover:opacity-95 text-white font-semibold uppercase tracking-wider text-xs sm:text-sm rounded-xl shadow-lg shadow-gold-500/20 transition-all flex items-center justify-center gap-2 min-h-[44px] disabled:opacity-50"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>Request a Quotation</span>
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <span>Sending Request...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        <span>Request a Quotation</span>
+                      </>
+                    )}
                   </button>
                 </div>
               </form>

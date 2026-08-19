@@ -50,6 +50,7 @@ export default function Footer({ onOpenQuote }) {
               <li><a href="#markets" className="hover:text-gold-600 transition-colors py-0.5 block">Markets</a></li>
               <li><a href="#why-omega" className="hover:text-gold-600 transition-colors py-0.5 block">Why Omega</a></li>
               <li><a href="#leadership" className="hover:text-gold-600 transition-colors py-0.5 block">Leadership</a></li>
+              <li><a href="#insights" className="hover:text-gold-600 transition-colors py-0.5 block">Insights & FAQ</a></li>
               <li><a href="#contact" className="hover:text-gold-600 transition-colors py-0.5 block">Contact</a></li>
               <li>
                 <button

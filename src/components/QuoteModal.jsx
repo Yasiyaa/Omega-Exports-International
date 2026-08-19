@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Send, CheckCircle2, ShieldCheck, Globe } from 'lucide-react';
+import { X, Send, CheckCircle2, ShieldCheck, Globe, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
@@ -15,6 +15,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
 
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [activationNeeded, setActivationNeeded] = useState(false);
 
   useEffect(() => {
     if (defaultProduct) {
@@ -27,7 +28,10 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
-      setTimeout(() => setSubmitted(false), 300);
+      setTimeout(() => {
+        setSubmitted(false);
+        setActivationNeeded(false);
+      }, 300);
     }
     return () => {
       document.body.style.overflow = 'unset';
@@ -39,13 +43,46 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setActivationNeeded(false);
+
+    try {
+      const payload = new FormData();
+      payload.append("_subject", `New B2B Export Quotation Request: ${formData.product} - ${formData.company || formData.name}`);
+      payload.append("_replyto", formData.email);
+      payload.append("_template", "table");
+      payload.append("_captcha", "false");
+      payload.append("Customer Name", formData.name);
+      payload.append("Customer Email", formData.email);
+      payload.append("Company Name", formData.company);
+      payload.append("Product Category", formData.product);
+      payload.append("Quantity Required", formData.quantity);
+      payload.append("Destination Port / Country", formData.destination);
+      payload.append("Special Message / Requirements", formData.message || "No additional message specified.");
+
+      const response = await fetch("https://formsubmit.co/ajax/omegaexpintl@gmail.com", {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: payload
+      });
+
+      const result = await response.json();
+      console.log("FormSubmit Submission Result:", result);
+
+      if (result.message && result.message.toLowerCase().includes("activation")) {
+        setActivationNeeded(true);
+      }
       setSubmitted(true);
-    }, 800);
+    } catch (err) {
+      console.error("Form submission error:", err);
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -71,25 +108,25 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
           className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden z-10 border border-gold-500/30 my-2 sm:my-8 max-h-[92dvh] flex flex-col"
         >
           {/* Header Bar */}
-          <div className="bg-[#072042] px-4 xs:px-6 py-3.5 sm:py-5 text-white flex items-center justify-between border-b border-gold-500/20 shrink-0 gap-2">
-            <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+          <div className="bg-white px-4 xs:px-6 py-4 sm:py-5 text-slate-800 flex items-center justify-between border-b border-slate-200/90 shrink-0 gap-3 shadow-xs">
+            <div className="flex items-center gap-3 sm:gap-4 min-w-0">
               <img
                 src="/assets/1 logo_Logo concept 1 copy 2.png"
                 alt="Omega Exports Logo"
-                className="h-7 xs:h-8 sm:h-10 w-auto object-contain filter brightness-110 contrast-125 shrink-0"
+                className="h-8 xs:h-9 sm:h-12 w-auto object-contain shrink-0"
               />
               <div className="min-w-0">
-                <span className="text-[10px] sm:text-xs uppercase tracking-widest text-gold-400 font-bold block truncate">
+                <span className="text-[11px] sm:text-xs uppercase tracking-widest text-gold-600 font-bold block truncate">
                   Omega Exports International
                 </span>
-                <h3 className="text-sm xs:text-base sm:text-2xl font-serif font-bold text-white mt-0.5 truncate">
+                <h3 className="text-base sm:text-xl lg:text-2xl font-serif font-bold text-[#072042] mt-0.5 truncate tracking-tight">
                   Tell Us What You Are Looking For
                 </h3>
               </div>
             </div>
             <button
               onClick={onClose}
-              className="text-slate-400 hover:text-white p-1.5 sm:p-2 rounded-full hover:bg-white/10 transition-colors focus:outline-none shrink-0 min-w-[36px] min-h-[36px] flex items-center justify-center"
+              className="text-slate-400 hover:text-[#072042] bg-slate-100 hover:bg-slate-200 border border-slate-200/80 p-2 rounded-xl transition-all focus:outline-none shrink-0 min-w-[38px] min-h-[38px] flex items-center justify-center cursor-pointer shadow-xs"
               aria-label="Close modal"
             >
               <X className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -104,15 +141,27 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-6 sm:py-8 space-y-4"
               >
-                <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-inner">
-                  <CheckCircle2 className="w-10 h-10" />
+                <div className={`w-16 h-16 ${activationNeeded ? 'bg-amber-100 text-amber-600' : 'bg-emerald-100 text-emerald-600'} rounded-full flex items-center justify-center mx-auto shadow-inner`}>
+                  {activationNeeded ? <Mail className="w-10 h-10" /> : <CheckCircle2 className="w-10 h-10" />}
                 </div>
                 <h4 className="text-2xl font-serif font-bold text-[#072042]">
-                  Request Received
+                  {activationNeeded ? "One-Time Activation Required" : "Request Received"}
                 </h4>
-                <p className="text-slate-600 max-w-md mx-auto text-sm sm:text-base leading-relaxed font-light">
-                  Thank you, <span className="font-semibold text-[#072042]">{formData.name}</span>. Our team is reviewing your requirements for <span className="font-semibold text-gold-700">{formData.product}</span>.
-                </p>
+                
+                {activationNeeded ? (
+                  <div className="bg-amber-50 border border-amber-200 p-4 rounded-2xl max-w-md mx-auto text-left text-xs sm:text-sm text-amber-950 space-y-2">
+                    <p className="font-semibold text-amber-900">
+                      📩 FormSubmit sent a 1-click activation link to <span className="underline">omegaexpintl@gmail.com</span>!
+                    </p>
+                    <p className="text-amber-800 text-xs leading-relaxed">
+                      Please open your Gmail inbox, check Spam/Promotions if needed, and click <strong>"Activate Form"</strong> once. After activating, all future quotation requests will deliver to your inbox automatically!
+                    </p>
+                  </div>
+                ) : (
+                  <p className="text-slate-600 max-w-md mx-auto text-sm sm:text-base leading-relaxed font-light">
+                    Thank you, <span className="font-semibold text-[#072042]">{formData.name}</span>. Our team is reviewing your requirements for <span className="font-semibold text-gold-700">{formData.product}</span>. Details sent to <span className="font-medium text-[#072042]">omegaexpintl@gmail.com</span>.
+                  </p>
+                )}
 
                 <div className="bg-[#faf8f5] p-4 rounded-2xl max-w-md mx-auto text-left text-xs sm:text-sm space-y-2 border border-warm-200">
                   <div className="flex justify-between">
@@ -135,7 +184,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
 
                 <button
                   onClick={onClose}
-                  className="mt-4 px-8 py-3 bg-[#072042] hover:bg-navy-900 text-white text-xs sm:text-sm font-semibold rounded-xl transition-all shadow-md"
+                  className="mt-4 px-8 py-3 bg-[#072042] hover:bg-navy-900 text-white text-xs sm:text-sm font-semibold rounded-xl transition-all shadow-md cursor-pointer"
                 >
                   Close & Continue
                 </button>

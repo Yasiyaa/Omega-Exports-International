@@ -7,6 +7,7 @@ import Markets from './components/Markets';
 import WhyOmega from './components/WhyOmega';
 import Leadership from './components/Leadership';
 import VisionCommitment from './components/VisionCommitment';
+import Insights from './components/Insights';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import QuoteModal from './components/QuoteModal';
@@ -38,6 +39,7 @@ export default function App() {
         <WhyOmega onOpenQuote={handleOpenQuote} />
         <Leadership />
         <VisionCommitment onOpenQuote={handleOpenQuote} />
+        <Insights onOpenQuote={handleOpenQuote} />
         <Contact onOpenQuote={handleOpenQuote} />
       </main>
 
