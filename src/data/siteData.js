@@ -79,7 +79,7 @@ export const WHY_OMEGA_FEATURES = [
   {
     id: "supply",
     title: "Reliable Supply",
-    description: "We focus on developing dependable supply chains and long term relationships with our partners."
+    description: "We are committed to building reliable and resilient supply chains, ensuring consistent quality, timely delivery, and dependable service. Through strong, long-term partnerships with our suppliers and customers, we create a stable and trusted supply network built for lasting success."
   },
   {
     id: "development",
