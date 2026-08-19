@@ -273,7 +273,7 @@ export default function QuoteModal({ isOpen, onClose, defaultProduct = '' }) {
                       type="text"
                       name="quantity"
                       required
-                      placeholder="e.g. Kg to Container"
+                      placeholder={formData.product === 'Food & Agricultural Products' ? 'e.g. Bulk Commercial Volume' : 'e.g. Kg to Container'}
                       value={formData.quantity}
                       onChange={handleChange}
                       className="w-full px-4 py-2.5 bg-[#faf8f5] border border-warm-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:bg-white focus:outline-none transition text-sm text-slate-800"
