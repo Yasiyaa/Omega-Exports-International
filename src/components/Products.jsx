@@ -7,13 +7,10 @@ export default function Products({ onOpenQuote }) {
   return (
     <section id="products" className="py-16 sm:py-24 bg-[#faf8f5] text-navy-950 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3 sm:space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-700 text-xs font-semibold uppercase tracking-widest">
-            <Sparkles className="w-4 h-4 text-gold-600" />
-            <span>Product Portfolio</span>
-          </div>
+
           <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#072042] tracking-tight">
             What We Export
           </h2>
@@ -41,7 +38,7 @@ export default function Products({ onOpenQuote }) {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#072042]/90 via-[#072042]/30 to-transparent" />
-                
+
                 <div className="absolute bottom-4 left-4 right-4">
                   <span className="text-[10px] uppercase tracking-widest text-gold-300 font-semibold px-2.5 py-0.5 border border-gold-500/40 rounded-md bg-[#072042]/80 backdrop-blur-md inline-block mb-1">
                     {product.subtitle}

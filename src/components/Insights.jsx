@@ -14,8 +14,7 @@ const ARTICLES = [
     content: [
       'Australia is recognized worldwide for producing some of the highest quality beef, lamb, and mutton. Strict biosecurity regulations, natural grass-fed pastures, and advanced processing facilities ensure that Australian red meat consistently meets international trade benchmarks.',
       'Maintaining cold-chain integrity is central to meat export logistics. From processing facilities to refrigerated sea containers and air freight pallets, temperature control is monitored to prevent spoilage and extend shelf life for overseas distributors, commercial caterers, and retail chains.',
-      'Additionally, Australian red meat export processors adhere to strict international trade specifications, including AUS-MEAT language and grading, as well as accredited Halal certification processes for Islamic import requirements across the Middle East, South Asia, and Southeast Asia.',
-      'At Omega Exports International, we work alongside certified Australian producers to deliver premium beef, lamb, and mutton tailored to international market specifications.'
+      'Additionally, Australian red meat export processors adhere to strict international trade specifications, including AUS-MEAT language and grading.'
     ]
   },
   {
@@ -83,13 +82,10 @@ export default function Insights({ onOpenQuote }) {
   return (
     <section id="insights" className="py-16 sm:py-24 bg-[#faf8f5] text-navy-950 relative overflow-hidden border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
-        
+
         {/* Header Title */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gold-500/15 border border-gold-500/30 text-gold-800 text-xs font-semibold uppercase tracking-widest">
-            <BookOpen className="w-3.5 h-3.5" />
-            <span>Export Insights & Trade Knowledge</span>
-          </div>
+
 
           <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#072042] tracking-tight">
             Industry Articles & Frequently Asked Questions
@@ -204,7 +200,6 @@ export default function Insights({ onOpenQuote }) {
             </button>
           </div>
         </div>
-
       </div>
 
       {/* Article Detail Modal */}

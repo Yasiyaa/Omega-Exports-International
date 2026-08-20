@@ -67,13 +67,10 @@ export default function Contact({ onOpenQuote }) {
   return (
     <section id="contact" className="py-16 sm:py-24 bg-[#faf8f5] text-navy-950 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3 sm:space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-700 text-xs font-semibold uppercase tracking-widest">
-            <Mail className="w-4 h-4 text-gold-600" />
-            <span>International Inquiries</span>
-          </div>
+
           <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#072042] tracking-tight">
             Contact & Quotation Desk
           </h2>
@@ -83,10 +80,10 @@ export default function Contact({ onOpenQuote }) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
-          
+
           {/* Left Column: Corporate Info */}
           <div className="lg:col-span-5 space-y-6">
-            
+
             <div className="bg-[#072042] rounded-3xl p-6 sm:p-10 text-white shadow-xl border border-gold-500/30 space-y-6">
               <div>
                 <span className="text-xs uppercase tracking-widest text-gold-400 font-bold">Australian Office</span>
