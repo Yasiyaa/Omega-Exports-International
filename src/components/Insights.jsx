@@ -14,7 +14,8 @@ const ARTICLES = [
     content: [
       'Australia is recognized worldwide for producing some of the highest quality beef, lamb, and mutton. Strict biosecurity regulations, natural grass-fed pastures, and advanced processing facilities ensure that Australian red meat consistently meets international trade benchmarks.',
       'Maintaining cold-chain integrity is central to meat export logistics. From processing facilities to refrigerated sea containers and air freight pallets, temperature control is monitored to prevent spoilage and extend shelf life for overseas distributors, commercial caterers, and retail chains.',
-      'Additionally, Australian red meat export processors adhere to strict international trade specifications, including AUS-MEAT language and grading.'
+      'Additionally, Australian red meat export processors adhere to strict international trade specifications, including AUS-MEAT language and grading.',
+      'At Omega Exports International, we work alongside certified Australian producers to deliver premium beef, lamb, and mutton tailored to international market specifications.'
     ]
   },
   {
