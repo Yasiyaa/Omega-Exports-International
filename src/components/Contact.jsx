@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, ShieldCheck, Mail, Building, Globe, Phone } from 'lucide-react';
+import { Send, CheckCircle2, ShieldCheck, Mail, Building, Globe, Phone, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { BRAND_INFO } from '../data/siteData';
 
@@ -122,6 +122,18 @@ export default function Contact({ onOpenQuote }) {
                   <div>
                     <span className="text-xs text-slate-400 block font-medium">Entity Type</span>
                     <span className="font-medium text-white">Australian Proprietary Company (Pty Ltd)</span>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
+                  <div>
+                    <span className="text-xs text-slate-400 block font-medium">Business Hours</span>
+                    <div className="text-white font-medium space-y-0.5 mt-0.5">
+                      <p>Monday – Friday: 8:00 AM – 6:00 PM</p>
+                      <p>Saturday: 8:30 AM – 2:00 PM</p>
+                      <p>Sunday &amp; Holidays: Closed</p>
+                    </div>
                   </div>
                 </div>
               </div>

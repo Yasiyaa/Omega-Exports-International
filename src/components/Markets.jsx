@@ -5,19 +5,17 @@ import { MARKETS_STAGES, BRAND_INFO } from '../data/siteData';
 
 export default function Markets({ onOpenQuote }) {
   return (
-    <section id="markets" className="py-20 sm:py-28 bg-[#072042] text-white relative overflow-hidden">
-      {/* Background Image Banner - High Visibility */}
+    <section id="markets" className="py-20 sm:py-28 bg-[#02091b] text-white relative overflow-hidden">
+      {/* Background Image Banner */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-fixed opacity-70 filter brightness-100 contrast-105 pointer-events-none"
+        className="absolute inset-0 bg-cover bg-center opacity-90 filter brightness-105 contrast-105 pointer-events-none"
         style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=85')` 
+          backgroundImage: `url('/assets/banner%202.jpg')` 
         }}
       />
 
-      {/* Balanced Navy Overlays for Visual Clarity */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#072042]/80 via-[#072042]/50 to-[#072042]/90" />
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gold-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-[500px] h-[500px] bg-navy-800/30 rounded-full blur-3xl pointer-events-none" />
+      {/* Soft Edge Blending to ensure export routes and labels remain bright & clear */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#02091b]/50 via-transparent to-[#02091b]/70 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12 sm:space-y-16">
         
@@ -44,7 +42,7 @@ export default function Markets({ onOpenQuote }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="bg-navy-950/85 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-gold-500/30 flex flex-col justify-between hover:border-gold-400 transition-all duration-300 shadow-2xl relative group"
+              className="bg-[#02091b]/60 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-gold-500/30 flex flex-col justify-between hover:border-gold-400 hover:bg-[#02091b]/75 transition-all duration-300 shadow-2xl relative group"
             >
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-center justify-between">
