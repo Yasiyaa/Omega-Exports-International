@@ -34,13 +34,13 @@ export default function App() {
       {/* Main Corporate Sections */}
       <main className="flex-grow">
         <Hero onOpenQuote={handleOpenQuote} />
+        <VideoBanner />
         <Introduction />
         <Products onOpenQuote={handleOpenQuote} />
         <Markets onOpenQuote={handleOpenQuote} />
         <WhyOmega onOpenQuote={handleOpenQuote} />
         <Leadership />
         <VisionCommitment onOpenQuote={handleOpenQuote} />
-        <VideoBanner />
         <Insights onOpenQuote={handleOpenQuote} />
         <Contact onOpenQuote={handleOpenQuote} />
       </main>
