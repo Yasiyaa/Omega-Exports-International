@@ -1,5 +1,46 @@
 @import "tailwindcss";
 
+/* Executive Luxury 'Q' font override for font-serif */
+@font-face {
+  font-family: 'Bodoni Moda Q';
+  font-style: normal;
+  font-weight: 400 500;
+  src: url('/fonts/bodoni-q-500.ttf') format('truetype'),
+       url('https://fonts.gstatic.com/l/font?kit=aFT67PxzY382XsXX63LUYL6GYFcan6NJrKp-VPjfJMShrpsGFUt8oXzawIBqswG8&skey=f4820fc03b641f99&v=v28') format('truetype');
+  unicode-range: U+0051, U+0071;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bodoni Moda Q';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/bodoni-q-600.ttf') format('truetype'),
+       url('https://fonts.gstatic.com/l/font?kit=aFT67PxzY382XsXX63LUYL6GYFcan6NJrKp-VPjfJMShrpsGFUt8oZDdwIBqswG8&skey=f4820fc03b641f99&v=v28') format('truetype');
+  unicode-range: U+0051, U+0071;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bodoni Moda Q';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/bodoni-q-700.ttf') format('truetype'),
+       url('https://fonts.gstatic.com/l/font?kit=aFT67PxzY382XsXX63LUYL6GYFcan6NJrKp-VPjfJMShrpsGFUt8oandwIBqswG8&skey=f4820fc03b641f99&v=v28') format('truetype');
+  unicode-range: U+0051, U+0071;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bodoni Moda Q';
+  font-style: normal;
+  font-weight: 800 900;
+  src: url('/fonts/bodoni-q-800.ttf') format('truetype'),
+       url('https://fonts.gstatic.com/l/font?kit=aFT67PxzY382XsXX63LUYL6GYFcan6NJrKp-VPjfJMShrpsGFUt8oc7dwIBqswG8&skey=f4820fc03b641f99&v=v28') format('truetype');
+  unicode-range: U+0051, U+0071;
+  font-display: swap;
+}
+
 @theme {
   --breakpoint-xs: 380px;
   --color-navy-950: #041328;
@@ -24,7 +65,7 @@
   --color-warm-400: #D6CBB8;
 
   --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
-  --font-serif: "Playfair Display", "Merriweather", serif;
+  --font-serif: "Bodoni Moda Q", "Playfair Display", "Merriweather", serif;
 
   --shadow-executive: 0 20px 40px -15px rgba(7, 32, 66, 0.08), 0 0 15px rgba(155, 119, 69, 0.05);
   --shadow-executive-hover: 0 30px 60px -12px rgba(7, 32, 66, 0.15), 0 0 25px rgba(155, 119, 69, 0.12);
