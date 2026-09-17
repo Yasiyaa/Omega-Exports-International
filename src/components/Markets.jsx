@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Globe, MapPin, Compass, ArrowUpRight, TrendingUp } from 'lucide-react';
 import { MARKETS_STAGES, BRAND_INFO } from '../data/siteData';
+import InteractiveExportMap from './InteractiveExportMap';
 
 export default function Markets({ onOpenQuote }) {
   return (
@@ -23,14 +24,27 @@ export default function Markets({ onOpenQuote }) {
         <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy-950/90 border border-gold-500/40 text-gold-300 text-xs font-semibold uppercase tracking-widest backdrop-blur-md">
             <Compass className="w-4 h-4 text-gold-400" />
-            <span>Market Presence & Expansion</span>
+            <span>Market Presence & Global Trade</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight leading-tight">
             Our Current Market & Global Vision
           </h2>
           <p className="text-slate-200 text-sm sm:text-lg font-light leading-relaxed">
-            A structured three-stage trade strategy connecting Australian producers with high-demand international markets.
+            Direct trade corridors from Australia to high-demand international markets, backed by certified cold-chain logistics.
           </p>
+        </div>
+
+        {/* Interactive Global Trade Map & Exact Silhouette Showcase */}
+        <InteractiveExportMap onOpenQuote={onOpenQuote} />
+
+        {/* Strategic Phased Expansion Framework Divider */}
+        <div className="pt-8 border-t border-white/10 text-center max-w-2xl mx-auto space-y-2">
+          <span className="text-xs font-mono uppercase tracking-widest text-gold-400">
+            Structured Strategic Framework
+          </span>
+          <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
+            Expansion Across Key International Corridors
+          </h3>
         </div>
 
         {/* 3-Stage Market Cards Grid */}
