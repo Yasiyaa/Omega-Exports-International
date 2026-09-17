@@ -130,8 +130,8 @@ export default function Contact({ onOpenQuote }) {
                   <div>
                     <span className="text-xs text-slate-400 block font-medium">Business Hours</span>
                     <div className="text-white font-medium space-y-0.5 mt-0.5">
-                      <p>Monday – Friday: 8:00 AM – 6:00 PM</p>
-                      <p>Saturday: 8:30 AM – 2:00 PM</p>
+                      <p>Monday – Friday: 8:00 am – 6:00 pm</p>
+                      <p>Saturday: 8:30 am – 2:00 pm</p>
                       <p>Sunday &amp; Holidays: Closed</p>
                     </div>
                   </div>

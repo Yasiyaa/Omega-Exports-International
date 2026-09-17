@@ -107,28 +107,28 @@ export default function Introduction() {
           {/* 3 Executive Feature Pillars */}
           <div className="pt-8 border-t border-warm-200 grid grid-cols-1 sm:grid-cols-3 gap-4">
 
-            <div className="p-5 rounded-2xl bg-[#faf8f5] border border-gold-500/20 space-y-2 hover:border-gold-500/50 transition-colors">
-              <div className="w-9 h-9 rounded-xl bg-[#072042] text-gold-400 flex items-center justify-center shadow-sm mb-1">
+            <div className="p-5 rounded-2xl bg-[#072042] border border-gold-500/30 space-y-2 hover:border-gold-400 transition-all duration-300 shadow-md">
+              <div className="w-9 h-9 rounded-xl bg-gold-500/15 border border-gold-500/30 text-gold-400 flex items-center justify-center shadow-sm mb-1">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h4 className="font-serif font-bold text-[#072042] text-base">Trusted Sourcing</h4>
-              <p className="text-xs text-slate-600 font-light">Connecting top Australian producers & premium suppliers.</p>
+              <h4 className="font-serif font-bold text-white text-base">Trusted Sourcing</h4>
+              <p className="text-xs text-slate-200 font-light">Connecting top Australian producers & premium suppliers.</p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-[#faf8f5] border border-gold-500/20 space-y-2 hover:border-gold-500/50 transition-colors">
-              <div className="w-9 h-9 rounded-xl bg-[#072042] text-gold-400 flex items-center justify-center shadow-sm mb-1">
+            <div className="p-5 rounded-2xl bg-[#072042] border border-gold-500/30 space-y-2 hover:border-gold-400 transition-all duration-300 shadow-md">
+              <div className="w-9 h-9 rounded-xl bg-gold-500/15 border border-gold-500/30 text-gold-400 flex items-center justify-center shadow-sm mb-1">
                 <CheckCircle2 className="w-5 h-5" />
               </div>
-              <h4 className="font-serif font-bold text-[#072042] text-base">Reliable Supply</h4>
-              <p className="text-xs text-slate-600 font-light">Dependable supply chain & distribution relationships.</p>
+              <h4 className="font-serif font-bold text-white text-base">Reliable Supply</h4>
+              <p className="text-xs text-slate-200 font-light">Dependable supply chain & distribution relationships.</p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-[#faf8f5] border border-gold-500/20 space-y-2 hover:border-gold-500/50 transition-colors">
-              <div className="w-9 h-9 rounded-xl bg-[#072042] text-gold-400 flex items-center justify-center shadow-sm mb-1">
+            <div className="p-5 rounded-2xl bg-[#072042] border border-gold-500/30 space-y-2 hover:border-gold-400 transition-all duration-300 shadow-md">
+              <div className="w-9 h-9 rounded-xl bg-gold-500/15 border border-gold-500/30 text-gold-400 flex items-center justify-center shadow-sm mb-1">
                 <Globe2 className="w-5 h-5" />
               </div>
-              <h4 className="font-serif font-bold text-[#072042] text-base">Global Reach</h4>
-              <p className="text-xs text-slate-600 font-light">Expanding from Sri Lanka towards China & the UK.</p>
+              <h4 className="font-serif font-bold text-white text-base">Global Reach</h4>
+              <p className="text-xs text-slate-200 font-light">Expanding from Sri Lanka towards China & the UK.</p>
             </div>
 
           </div>
