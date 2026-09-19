@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Send, CheckCircle2, ShieldCheck, Mail, Building, Globe, Phone, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { BRAND_INFO } from '../data/siteData';
+import WorkingHours from './WorkingHours';
 
 export default function Contact({ onOpenQuote }) {
   const [submitted, setSubmitted] = useState(false);
@@ -126,14 +127,9 @@ export default function Contact({ onOpenQuote }) {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs text-slate-400 block font-medium">Business Hours</span>
-                    <div className="text-white font-medium space-y-0.5 mt-0.5">
-                      <p>Monday – Friday: 8:00 am – 6:00 pm</p>
-                      <p>Saturday: 8:30 am – 2:00 pm</p>
-                      <p>Sunday &amp; Holidays: Closed</p>
-                    </div>
+                  <Clock className="w-5 h-5 text-gold-400 shrink-0 mt-1" />
+                  <div className="flex-1 min-w-0">
+                    <WorkingHours />
                   </div>
                 </div>
               </div>
