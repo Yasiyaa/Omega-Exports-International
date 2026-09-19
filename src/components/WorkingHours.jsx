@@ -31,7 +31,7 @@ export default function WorkingHours() {
     <div className="space-y-3 pt-1">
       {/* Top Header Line: Exact replica of the reference attachment */}
       <div className="flex items-center justify-between">
-        <div className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.18em] text-slate-300/90 flex items-center gap-2">
+        <div className="font-sans text-[11px] sm:text-xs uppercase tracking-wider text-slate-300/90 flex items-center gap-2 font-medium">
           <span>OPEN HOURS</span>
           <span className="text-slate-500 font-bold">·</span>
           <AnimatePresence mode="wait">
@@ -41,7 +41,7 @@ export default function WorkingHours() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 4 }}
               transition={{ duration: 0.18 }}
-              className={activeSchedule.isOpen ? "text-white font-medium tracking-widest" : "text-amber-400 font-medium tracking-widest"}
+              className={activeSchedule.isOpen ? "text-white font-semibold tracking-wider" : "text-amber-400 font-semibold tracking-wider"}
             >
               {activeSchedule.hours}
             </motion.span>
@@ -49,7 +49,7 @@ export default function WorkingHours() {
         </div>
 
         {/* Small subtle timezone / status indicator */}
-        <span className="text-[10px] font-mono text-gold-400/80 uppercase tracking-widest hidden sm:inline-block">
+        <span className="text-[10px] font-sans text-gold-400/90 uppercase tracking-wider hidden sm:inline-block font-medium">
           Melbourne (AEST)
         </span>
       </div>
