@@ -66,7 +66,7 @@ export default function InteractiveExportMap({ onOpenQuote }) {
               }}
               onMouseEnter={() => setHoveredId(dest.id)}
               onMouseLeave={() => setHoveredId(null)}
-              className={`group px-3.5 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-2 border cursor-pointer ${
+              className={`group px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2.5 border cursor-pointer ${
                 isSelected
                   ? 'bg-gold-500/20 text-gold-300 border-gold-400/80 shadow-[0_0_15px_rgba(203,171,116,0.25)]'
                   : 'bg-[#041328]/70 text-slate-300 border-white/10 hover:border-gold-500/40 hover:text-white hover:bg-[#072042]'
@@ -74,15 +74,6 @@ export default function InteractiveExportMap({ onOpenQuote }) {
             >
               <span className="text-base leading-none">{dest.flagEmoji}</span>
               <span>{dest.name}</span>
-              <span
-                className={`text-[10px] px-1.5 py-0.5 rounded uppercase font-semibold ${
-                  dest.stage === 'Stage 01'
-                    ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
-                    : 'bg-gold-500/20 text-gold-300 border border-gold-500/30'
-                }`}
-              >
-                {dest.stage}
-              </span>
             </button>
           );
         })}
@@ -288,12 +279,12 @@ export default function InteractiveExportMap({ onOpenQuote }) {
                     {/* Animated Radar Ripples when Active */}
                     {isActive ? (
                       <>
-                        <circle r="20" fill="none" stroke={dest.stage === 'Stage 01' ? '#34d399' : '#f59e0b'} strokeWidth="1.2">
+                        <circle r="20" fill="none" stroke="#f59e0b" strokeWidth="1.2">
                           <animate attributeName="r" values="5;24" dur="1.8s" repeatCount="indefinite" />
                           <animate attributeName="opacity" values="0.9;0" dur="1.8s" repeatCount="indefinite" />
                         </circle>
-                        <circle r="9" fill={dest.stage === 'Stage 01' ? '#10b981' : '#f59e0b'} fillOpacity="0.35" />
-                        <circle r="6" fill="#041328" stroke={dest.stage === 'Stage 01' ? '#34d399' : '#f59e0b'} strokeWidth="2" />
+                        <circle r="9" fill="#f59e0b" fillOpacity="0.35" />
+                        <circle r="6" fill="#041328" stroke="#f59e0b" strokeWidth="2" />
                         <circle r="2.8" fill="#ffffff" />
                       </>
                     ) : (
@@ -313,7 +304,7 @@ export default function InteractiveExportMap({ onOpenQuote }) {
                         rx="11"
                         fill={isActive ? '#041328' : '#072042'}
                         fillOpacity="0.95"
-                        stroke={isActive ? (dest.stage === 'Stage 01' ? '#34d399' : '#f59e0b') : 'rgba(203,171,116,0.35)'}
+                        stroke={isActive ? '#f59e0b' : 'rgba(203,171,116,0.35)'}
                         strokeWidth={isActive ? '1.5' : '0.8'}
                         filter="drop-shadow(0 4px 8px rgba(0,0,0,0.6))"
                       />
@@ -347,12 +338,12 @@ export default function InteractiveExportMap({ onOpenQuote }) {
           <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-white/10 text-xs text-slate-300">
             <div className="flex items-center gap-4">
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-                <span>Stage 01 (Active Focus)</span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.8)]" />
+                <span>Active Trade Corridors</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.8)]" />
-                <span>Stage 02 (Targeted Growth)</span>
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+                <span>Australia Origin Hub</span>
               </span>
             </div>
             <div className="flex items-center gap-1.5 text-gold-300 font-mono text-[11px]">
@@ -373,18 +364,12 @@ export default function InteractiveExportMap({ onOpenQuote }) {
               transition={{ duration: 0.35, ease: 'easeOut' }}
               className="h-full bg-[#041328]/85 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-gold-500/30 shadow-2xl flex flex-col justify-between space-y-6 relative overflow-hidden"
             >
-              {/* Header: Stage Badge + Country Identity */}
+              {/* Header: Destination Badge + Country Identity */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span
-                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider ${
-                      activeCountry.stage === 'Stage 01'
-                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
-                        : 'bg-gold-500/20 text-gold-300 border border-gold-500/40'
-                    }`}
-                  >
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>{activeCountry.stage} • {activeCountry.status}</span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-gold-500/20 text-gold-300 border border-gold-500/40">
+                    <Sparkles className="w-3.5 h-3.5 text-gold-400" />
+                    <span>{activeCountry.region} • Export Destination</span>
                   </span>
 
                   <span className="font-mono text-xs text-gold-400/80 font-bold tracking-widest px-2.5 py-0.5 rounded bg-white/5 border border-white/10">
